@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethereal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="script.js"></script>
+<style>
+    p {
+        font-family: 'DejaVu Serif', serif;
+    }
+    #logoheader {
+        font-family: 'Times New Roman', serif;
+        width: 100vw; 
+    height: 100vh;
+    margin-top: 85px;
+    text-align: center;
+    position: fixed;
+    font-size: 85px;
+    transform-origin: center top;
+    }
+    .text-overlay {
+        font-family: 'DejaVu Serif', serif;
+      position: absolute;
+      bottom: 80px; 
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 2vw; 
+      text-align: center;
+    }
+    .text-overlay p {
+      margin-bottom: 7px; 
+    }
+    .custom-button {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1vw; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+.overlay-collection {
+    font-family: 'DejaVu Serif', serif;
+    position: absolute;
+    bottom: 45px; /* Adjust distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 3vw; /* Use vw unit for responsive font size */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.overlay-collection p {
+      margin-bottom: 1px; /* Menyesuaikan jarak antara teks dan tombol */
+    }
+.button-collection {
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1vw; /* Use vw unit for responsive font size */
+    width: 100%;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+<!-- Menu Bar-->
+<section id="menubar" class="navbar-light bg-light p-5 fixed-top">
+<div class="fixed-top container-fluid position-relative">
+	<nav class="navbar navbar-expand-lg fixed-top">
+	<div id="logoheader" class="container">Ethereal.</div>
+	</nav>
+	<div class="container-fluid position-relative">
+		<div class="fixed-icons-container">
+			<div class="position-fixed top-0 end-0 p-3">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewbox="0 0 16 16">
+				<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+				</svg>
+				<div class="gap-2 d-inline-block"></div>
+				<!-- Menu Bar Icon -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
+				<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--About Ethereal -->
+	<section id="about" style="margin-top: 75px;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 d-flex align-items-center justify-content-center">
+				<img src="img/aboutus.png" class="img-fluid">
+			</div>
+			<div class="col-md-6 d-flex align-items-center justify-content-center">
+				<p>
+					 A premier fashion blog specializing in high-end collections, focusing on Gucci, Louis Vuitton (LV), and Dior. Our site features timely updates on seasonal fashion, and our interactive quizzes assist users in finding their ideal high-end brand based on personal style. Committed to being the ultimate destination for fashion enthusiasts, we provide informative and entertaining content, welcoming you to the exclusive world of high-end fashion with our unique collection.
+				</p>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--Video -->
+	<section id="video-section" style="margin-bottom: 10px;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12" style="position: relative;">
+				<video width="100%" height="auto" controls>
+				<source src="img/video.mp4" type="video/mp4">
+				</video>
+				<div class="text-overlay">
+					<p>
+						 Discover Your Perfect Fashion Fit with<br>Our Trendy Brand Quiz!</p>
+					<button class="custom-button">Click Me!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--Collection -->
+	<section id="collection">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
+				<img src="img/lvphoto.png" class="img-fluid">
+				<div class="overlay-collection">
+					<p>
+						LOUIS VUITTON
+					</p>
+					<button class="button-collection">CLICK HERE FOR WINTER COLLECTION</button>
+				</div>
+			</div>
+			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
+				<img src="img/gucciphoto.png" class="img-fluid">
+				<div class="overlay-collection">
+					<p>
+						GUCCI
+					</p>
+					<button class="button-collection">CLICK HERE FOR WINTER COLLECTION</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" style="margin-top: 15px;">
+		<div class="row">
+			<div class="col-md-12" style="position: relative;">
+				<img src="img/diorphoto.png" class="img-fluid">
+				<div class="overlay-collection">
+					<p>
+						DIOR
+					</p>
+					<button class="button-collection">CLICK HERE FOR WINTER COLLECTION</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--Gifts -->
+	<section id="gifts" style="margin-top: 15px;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
+				<img src="img/gifts4her.png" class="img-fluid">
+				<div class="overlay-collection">
+					<p>
+						GIFTS FOR HER
+					</p>
+					<button class="button-collection">EXPLORE THE COLLECTION</button>
+				</div>
+			</div>
+			<div class="col-md-6 d-flex align-items-center justify-content-center">
+				<p>
+					 Explore exquisite gifts, carefully selected from the timeless elegance of Dior, the avant-garde luxury of Louis Vuitton (LV), and the sophisticated allure of Gucci's collections for women. Unveil promises of delightful moments that will add an enchanting sparkle to your year-end celebrations.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" style="margin-top: 15px;">
+		<div class="row">
+			<div class="col-md-6 d-flex align-items-center justify-content-center">
+				<p>
+					 Elevate the holiday season to new heights, capturing the enchantment of magical moments with distinctive gifts that embody the sophistication of Louis Vuitton, the glamour of Gucci, and the timeless elegance of Dior's menswear.
+				</p>
+			</div>
+			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
+				<img src="img/gifts4him.png" class="img-fluid">
+				<div class="overlay-collection">
+					<p>
+						GIFTS FOR HIM
+					</p>
+					<button class="button-collection">EXPLORE THE COLLECTION</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	</html>
