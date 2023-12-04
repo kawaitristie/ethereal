@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300;1,500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+/* Sidebar Menu */
+        .buttonmenu{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #tombol {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .buttonmenu >span,
+        .buttonmenu >span::before,
+        .buttonmenu >span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(0, 0, 0);
+            transition-duration: 0.25s;
+
+        }
+
+        #tombol{
+            opacity: 0;
+        }
+
+        .buttonmenu >span::before {
+            content: "";
+            top: -7px;
+        }
+
+        .buttonmenu >span::after {
+            content: "";
+            top: 7px;
+        }
+
+        #tombol:checked + .buttonmenu > span{
+            transform: rotate(45deg);
+
+        }
+
+        #tombol:checked + .buttonmenu > span::before{
+            top: 0;
+            transform: rotate(0);
+
+        }
+
+        #tombol:checked + .buttonmenu > span::after{
+            top: 0;
+            transform: rotate(90deg);
+
+        }
+
+        #tombol:checked ~ .menubar{
+            right: 100% !important;
+            transition-duration: 0.25s;
+        }
+
+/* Menu */
+        .menubar{
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            backdrop-filter: blur(15px);
+            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+            transition-duration: 0.25s;
+            overflow: scroll;
+        }
+
+        .menubar .menu{
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .menubar .menu .item{
+            position: relative;
+            cursor: pointer;
+        }
+
+        .menubar .menu .item a{
+            color: black;
+            font-size: large;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+        }
+
+        .menubar .menu .item a:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .menubar .menu .item i{
+            margin-right: 8px;
+        }
+
+        .menubar .menu .item .submenu{
+            background: rgb(238, 238, 238);
+            display: none;
+        }
+
+        .menubar .menu .submenu a{
+            padding: 20px;
+            font-size: small;
+        }
+
+        .Homepage {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+
+        }
+
+
+    </style>
+    <script>
+        $(document).ready(function(){
+        $('.subtombol').click(function(){
+            $(this).next('.submenu').slideToggle();
+        });
+        });
+    </script>
+</head>
+<body>
+    <div class="hamburger-menu">
+    <input id="tombol" type="checkbox">
+    <label class="buttonmenu" for="tombol">
+    <span></span>
+    </label>
+
+   <div class="menubar">
+    <div class="menu">
+        <div class="item">
+            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
+            <div class="submenu">
+                <a href="Twoman.html" class="subitem"> Top</a>
+                <a href="Dwoman.html" class="subitem"> Dress</a>
+                <a href="S&Swoman.html" class="subitem"> Skirts & Shorts</a>
+                <a href="Pwoman.html" class="subitem"> Pants</a>
+                <a href="Kwoman.html" class="subitem"> Knitwear</a>
+                <a href="Dewoman.html" class="subitem"> Denim</a>
+                <a href="Jwoman.html" class="subitem"> Jackets</a>
+                <a href="Cwoman.html" class="subitem"> Coats</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
+            <div class="submenu">
+                <a href="Bwoman.html" class="subitem"> Belt</a>
+                <a href="Ewoman.html" class="subitem"> Eyewear</a>
+                <a href="Si&Scwoman.html" class="subitem"> Silks & Scarves</a>
+                <a href="H&Gwoman.html" class="subitem"> Hats & Gloves</a>
+                <a href="S&Twoman.html" class="subitem"> Socks & Tights</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i> Shoes</a>
+            <div class="submenu">
+                <a href="S&Bwoman.html" class="subitem"> Sneakers & Boots</a>
+                <a href="Sa&Slwoman.html" class="subitem"> Sandals & Slides</a>
+                <a href="L&Lwoman.html" class="subitem"> Loafers & Lace-Up</a>
+                <a href="P&Hwoman.html" class="subitem"> Pums & High Heels</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="subtombol"><i class="fa-solid fa-bag-shopping"></i> Bags</a>
+            <div class="submenu">
+                <a href="BGwoman.html" class="subitem"> Iconic Bag From Gucci</a>
+                <a href="BLwoman.html" class="subitem"> Iconic Bag From LV</a>
+                <a href="BDwoman.html" class="subitem"> Iconic Bag From Dior</a>
+            </div>
+        </div>
+    </div>
+   </div>
+   <center><a class="Homepage" href="index.html">Ethereal</a></center>
+   <br>
+   <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Top</h3></center>
+   <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">In every pleat of the top cloth, there is a story of a woman's elegance and strength.</p></center>
+
+</body>
+</html>
