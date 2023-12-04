@@ -1,281 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ethereal</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="script.js"></script>
-<style>
-    p {
-        font-family: 'DejaVu Serif', serif;
-    }
-    #logoheader {
-        font-family: 'Times New Roman', serif;
-        width: 100vw; 
-    height: 100vh;
-    margin-top: 85px;
-    text-align: center;
-    position: fixed;
-    font-size: 85px;
-    transform-origin: center top;
-    }
-    .text-overlay {
-        font-family: 'DejaVu Serif', serif;
-      position: absolute;
-      bottom: 80px; 
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 2vw; 
-      text-align: center;
-    }
-    .text-overlay p {
-      margin-bottom: 7px; 
-    }
-    .custom-button {
-  background-color: white;
-  color: black;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 1vw; 
-  width: 100%; 
-  box-sizing: border-box; 
-}
-.overlay-collection {
-    font-family: 'DejaVu Serif', serif;
-    position: absolute;
-    bottom: 45px; /* Adjust distance from the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 3vw; /* Use vw unit for responsive font size */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.overlay-collection p {
-      margin-bottom: 1px; /* Menyesuaikan jarak antara teks dan tombol */
-    }
-.button-collection {
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-size: 1vw; /* Use vw unit for responsive font size */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.horizontalline{
-	border: 2px solid black ;
-	width: 80%;
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ethereal</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="script.js"></script>
+	<style>
+	body {
+		background-color: black;
+	}
 	
-}
-
-.verticalline{
-	border-left: 2px solid black;
-	height: 100px;
-}
-
-#img1{
-	position: relative;
-	margin-top: -120px;
-	margin-left: 25px;
+	p {
+		font-family: 'DejaVu Serif', serif;
+		color: white;
+	}
 	
-}
-
-#img2{
-	position: relative;
-	margin-top: -205px;
-	margin-left: 405px;
-}
-
-#img3{
-	position: relative;
-	margin-top: 20px;
-	margin-left: 795px;
-}
-
-#img4{
-	position: relative;
-	margin-top: -265px;
-	margin-left: 1158px;
-}
-
-</style>
+	#logoheader {
+		font-family: 'Times New Roman', serif;
+		font-size: 24px;
+		font-weight: bold;
+		width: 100vw;
+		height: 100vh;
+		margin-top: 85px;
+		text-align: center;
+		position: fixed;
+		font-size: 85px;
+		transform-origin: center top;
+	}
+	
+	.text-overlay {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 80px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 2vw;
+		text-align: center;
+	}
+	
+	.text-overlay p {
+		margin-bottom: 7px;
+	}
+	
+	.custom-button {
+		background-color: white;
+		color: black;
+		padding: 5px 10px;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	.overlay-collection {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 45px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 3vw;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.overlay-collection p {
+		margin-bottom: 1px;
+	}
+	
+	.button-collection {
+		background-color: white;
+		color: black;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	#timeline {
+		display: flex;
+		background-color: #141414;
+		&:hover {
+			.tl-item {
+				width: 33.3333%;
+			}
+		}
+	}
+	
+	.tl-item {
+		transform: translate3d(0, 0, 0);
+		position: relative;
+		width: 33.3333%;
+		height: 100vh;
+		min-height: 600px;
+		color: #ffff;
+		overflow: hidden;
+		transition: width 0.5s ease;
+		&:before,
+		&:after {
+			transform: translate3d(0, 0, 0);
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		&:after {
+			background: transparentize(#031625, 0.15);
+			opacity: 1;
+			transition: opacity 0.5s ease;
+		}
+		&:before {
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 75%);
+			z-index: 1;
+			opacity: 0;
+			transform: translate3d(0, 0, 0) translateY(50%);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+		&:hover {
+			width: 40% !important;
+			&:after {
+				opacity: 0;
+			}
+			&:before {
+				opacity: 1;
+				transform: translate3d(0, 0, 0) translateY(0);
+				transition: opacity 1s ease, transform 1s ease 0.25s;
+			}
+			.tl-content {
+				opacity: 1;
+				transform: translateY(0);
+				transition: all 0.75s ease 0.5s;
+			}
+			.tl-bg {
+				filter: grayscale(0);
+			}
+		}
+	}
+	
+	.tl-content {
+		transform: translate3d(0, 0, 0) translateY(25px);
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		margin: 0 1.618em;
+		top: 55%;
+		opacity: 0;
+		h1 {
+			font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			color: #1779cf;
+			font-size: 1.44rem;
+			font-weight: normal;
+		}
+	}
+	
+	.tl-year {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1;
+		border-top: 1px solid #ffff;
+		border-bottom: 1px solid #ffff;
+		p {
+			font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 1.728rem;
+			line-height: 0;
+		}
+	}
+	
+	.tl-bg {
+		transform: translate3d(0, 0, 0);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center center;
+		transition: filter 0.5s ease;
+		filter: grayscale(100%);
+	}
+	</style>
 </head>
-<body>
-<!-- Menu Bar-->
-<section id="menubar" class="navbar-light bg-light p-5 fixed-top">
-<div class="fixed-top container-fluid position-relative">
-	<nav class="navbar navbar-expand-lg fixed-top">
-	<div id="logoheader" class="container">Ethereal.</div>
-	</nav>
-	<div class="container-fluid position-relative">
-		<div class="fixed-icons-container">
-			<div class="position-fixed top-0 end-0 p-3">
 
-				<!-- Menu Bar Icon -->
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
-				<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-				</svg>
+<body>
+	<!-- Menu Bar-->
+	<section id="menubar" class="navbar-light bg-light p-5 fixed-top">
+		<div class="fixed-top container-fluid position-relative">
+			<nav class="navbar navbar-expand-lg fixed-top">
+				<div id="logoheader" class="container">Ethereal.</div>
+			</nav>
+		</div>
+		<div class="container-fluid position-relative">
+			<div class="fixed-icons-container">
+				<div class="position-fixed top-0 end-0 p-3">
+					<!-- Menu Bar Icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
+						<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" /> </svg>
+				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 	<!--About Ethereal -->
-	<section id="about" style="margin-top: 75px;">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col-md-6 d-flex align-items-center justify-content-center">
-				<img src="img/aboutus.png" class="img-fluid">
+			<div class="col-xl-7 col-xs-12" style="margin-top: 300px;">
+				<h1 style="color:whitesmoke;">What is Ethereal?</h1>
+				<p>A premier fashion blog specializing in high-end collections, focusing on Gucci, Louis Vuitton (LV), and Dior. Our site features timely updates on seasonal fashion, and our interactive quizzes assist users in finding their ideal high-end brand based on personal style. Committed to being the ultimate destination for fashion enthusiasts, we provide informative and entertaining content, welcoming you to the exclusive world of high-end fashion with our unique collection.</p>
 			</div>
-			<div class="col-md-6 d-flex align-items-center justify-content-center">
-				<p>
-					 A premier fashion blog specializing in high-end collections, focusing on Gucci, Louis Vuitton (LV), and Dior. Our site features timely updates on seasonal fashion, and our interactive quizzes assist users in finding their ideal high-end brand based on personal style. Committed to being the ultimate destination for fashion enthusiasts, we provide informative and entertaining content, welcoming you to the exclusive world of high-end fashion with our unique collection.
-				</p>
-			</div>
+			<div class="col-xl-5 col-xs-12" style="margin-top: 7rem;"> <img src="img/etherealdrawing.png" width="100%"> </div>
 		</div>
 	</div>
+	<!--Timeline-->
+	<section id="timeline">
+		<div class="tl-item">
+			<div class="tl-bg" style="background-image: url('img/lvtimeline')"></div>
+			<div class="tl-year">
+				<p class="f2 heading--sanSerif">1854</p>
+			</div>
+			<div class="tl-content">
+				<h1>Louis Vuitton</h1>
+				<p>Established in Paris, France, by Louis Vuitton, renowned for its innovative luggage designs and signature monogram canvas, becoming a symbol of timeless elegance.</p>
+			</div>
+		</div>
+		<div class="tl-item">
+			<div class="tl-bg" style="background-image: url('img/guccitimeline.avif')"></div>
+			<div class="tl-year">
+				<p class="f2 heading--sanSerif">1921</p>
+			</div>
+			<div class="tl-content">
+				<h1 class="f3 text--accent ttu">Gucci</h1>
+				<p>Founded in Florence, Italy, by Guccio Gucci, evolving from a small leather goods workshop to a global luxury brand known for its iconic double-G logo. </p>
+			</div>
+		</div>
+		<div class="tl-item">
+			<div class="tl-bg" style="background-image: url('img/diortimeline.avif')"></div>
+			<div class="tl-year">
+				<p class="f2 heading--sanSerif">1947</p>
+			</div>
+			<div class="tl-content">
+				<h1 class="f3 text--accent ttu">Dior</h1>
+				<p>Founded by Christian Dior in Paris, revolutionizing post-war fashion with the "New Look," characterized by full skirts and a nipped waist, shaping the brand into a symbol of sophistication and modern elegance. </p>
+			</div>
+		</div>
 	</section>
 	<!--Video -->
-	<section id="video-section" style="margin-bottom: 10px;">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12" style="position: relative;">
-				<video width="100%" height="auto" controls>
-				<source src="img/video.mp4" type="video/mp4">
-				</video>
-				<div class="text-overlay">
-					<p>
-						 Discover Your Perfect Fashion Fit with<br>Our Trendy Brand Quiz!</p>
-						 <br>Our Trendy Brand Quiz!</p> <a href="quiz.html" class="custom-button">Click Me!</a> </div>
-						</div>
-			</div>
+	<section id="video-section" style="margin-top: 30px; margin-bottom: 10px;">
+		<div class="col-md-12" style="position: relative;">
+			<video width="100%" height="auto" controls>
+				<source src="img/video.mp4" type="video/mp4"> </video>
+			<div class="text-overlay">
+				<p> Discover Your Perfect Fashion Fit with
+					<br>Our Trendy Brand Quiz!</p> <a href="quiz.html" class="custom-button">Click Me!</a> </div>
 		</div>
-	</div>
 	</section>
 	<!--Collection -->
 	<section id="collection">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
-				<img src="img/lvphoto.png" class="img-fluid">
-				<div class="overlay-collection">
-					<p>
-						LOUIS VUITTON
-					</p>
-					<a href="lv.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/lvphoto.png" class="img-fluid">
+					<div class="overlay-collection">
+						<p> LOUIS VUITTON </p> <a href="lv.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
 				</div>
-			</div>
-			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
-				<img src="img/gucciphoto.png" class="img-fluid">
-				<div class="overlay-collection">
-					<p>
-						GUCCI
-					</p>
-					<a href="gucci.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a>
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gucciphoto.png" class="img-fluid">
+					<div class="overlay-collection">
+						<p> GUCCI </p> <a href="gucci.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container-fluid" style="margin-top: 15px;">
-		<div class="row">
-			<div class="col-md-12" style="position: relative;">
-				<img src="img/diorphoto.png" class="img-fluid">
-				<div class="overlay-collection">
-					<p>
-						DIOR
-					</p>
-					<a href="dior.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a>
+		<div class="container-fluid" style="margin-top: 15px;">
+			<div class="row">
+				<div class="col-md-12" style="position: relative;"> <img src="img/diorphoto.png" class="img-fluid">
+					<div class="overlay-collection">
+						<p> DIOR </p> <a href="dior.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 	<!--Gifts -->
 	<section id="gifts" style="margin-top: 15px;">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
-				<img src="img/gifts4her.png" class="img-fluid">
-				<div class="overlay-collection">
-					<p>
-						GIFTS FOR HER
-					</p>
-					<button class="button-collection">EXPLORE THE COLLECTION</button>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4her.png" class="img-fluid">
+					<div class="overlay-collection">
+						<p> GIFTS FOR HER </p>
+						<button class="button-collection">EXPLORE THE COLLECTION</button>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-6 d-flex align-items-center justify-content-center">
-				<p>
-					 Explore exquisite gifts, carefully selected from the timeless elegance of Dior, the avant-garde luxury of Louis Vuitton (LV), and the sophisticated allure of Gucci's collections for women. Unveil promises of delightful moments that will add an enchanting sparkle to your year-end celebrations.
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid" style="margin-top: 15px;">
-		<div class="row">
-			<div class="col-md-6 d-flex align-items-center justify-content-center">
-				<p>
-					 Elevate the holiday season to new heights, capturing the enchantment of magical moments with distinctive gifts that embody the sophistication of Louis Vuitton, the glamour of Gucci, and the timeless elegance of Dior's menswear.
-				</p>
-			</div>
-			<div class="col-md-6 d-flex align-items-center justify-content-center position-relative">
-				<img src="img/gifts4him.png" class="img-fluid">
-				<div class="overlay-collection">
-					<p>
-						GIFTS FOR HIM
-					</p>
-					<button class="button-collection">EXPLORE THE COLLECTION</button>
+				<div class="col-md-6 d-flex align-items-center justify-content-center">
+					<p> Explore exquisite gifts, carefully selected from the timeless elegance of Dior, the avant-garde luxury of Louis Vuitton (LV), and the sophisticated allure of Gucci's collections for women. Unveil promises of delightful moments that will add an enchanting sparkle to your year-end celebrations. </p>
 				</div>
 			</div>
 		</div>
-	</div>
-	</section>
-	<!--Timeline-->>
-	<section id="timeline">
-		<div class="container-fluid" >
-					
-			<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="-971.4 41.6847 1482.13 249.567" width="1482.13" height="249.567" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 18.8px;" x="45.137" y="118.694" transform="matrix(0.8261150121688844, 0, 0, 1.2246459722518923, -947.6402729100027, -21.898664800802862)">Hermès <tspan x="45.137001037597656" dy="1em">​</tspan> (1837)</text>
-  <ellipse style="stroke: rgb(0, 0, 0);" cx="-959.049" cy="164.93" rx="12.351" ry="15.04" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" x1="-959.049" y1="165.322" x2="-959.049" y2="246.714" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 18.8px;" x="45.137" y="118.694" transform="matrix(0.8261150121688844, 0, 0, 1.2246459722518923, -588.4101650179945, 36.69999749511473)">Louis Vuitton <tspan x="45.137001037597656" dy="1em">​</tspan>     (1854)</text>
-  <ellipse style="stroke: rgb(0, 0, 0);" cx="-576.954" cy="162.013" rx="12.351" ry="15.04" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 2px;" x1="-577.003" y1="87.248" x2="-577.003" y2="168.64" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 2px;" x1="-957.484" y1="164.27" x2="510.73" y2="156.932" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <ellipse style="stroke: rgb(0, 0, 0);" cx="-193.9" cy="157.506" rx="12.351" ry="15.04" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 2px;" x1="-193.9" y1="156.824" x2="-193.9" y2="238.216" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 18.8px;" x="45.137" y="118.694" transform="matrix(0.9455651044845582, 0, 0, 1.2246459722518923, -209.64441230363263, -24.19924772082635)"> Gucci<tspan x="45.137001037597656" dy="1em">​</tspan> (1921)</text>
-  <ellipse style="stroke: rgb(0, 0, 0);" cx="174.868" cy="156.425" rx="12.351" ry="15.04" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <line style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 2px;" x1="175.95" y1="78.96" x2="175.95" y2="160.352" transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 0)"/>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 18.8px;" x="45.137" y="118.694" transform="matrix(1.0120650529861452, 0, 0, 1.2246459722518923, 152.9464897058383, 38.78517208673313)">   Dior<tspan x="45.137001037597656" dy="1em">​</tspan> (1947)</text>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 89.8px;" x="-455.553" y="446.058" transform="matrix(0.15637300908565524, 0, 0, 0.1262060105800629, -725.2090562166131, 125.61654850269181)">Originating in Paris, <tspan x="-455.5530090332031" dy="1em">​</tspan>France, Thierry Hermès<tspan x="-455.5530090332031" dy="1em">​</tspan>begins crafting high-<tspan x="-455.5530090332031" dy="1em">​</tspan>quality harnesses and <tspan x="-455.5530090332031" dy="1em">​</tspan>bridles, expanding into<tspan x="-455.5530090332031" dy="1em">​</tspan>luxury goods and fashion,<tspan x="-455.5530090332031" dy="1em">​</tspan>celebrated for its <tspan x="-455.5530090332031" dy="1em">​</tspan>craftsmanship and the <tspan x="-455.5530090332031" dy="1em">​</tspan>iconic Birkin and Kelly <tspan x="-455.5530090332031" dy="1em">​</tspan>bags.</text>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 89.8px;" x="-455.553" y="446.058" transform="matrix(0.15637300908565524, 0, 0, 0.1262060105800629, -381.3887385932911, -4.662686894278039)">Established in Paris,<tspan x="-455.5530090332031" dy="1em">​</tspan>France, by Louis <tspan x="-455.5530090332031" dy="1em">​</tspan>Vuitton, renowned for its <tspan x="-455.5530090332031" dy="1em">​</tspan>innovative luggage<tspan x="-455.5530090332031" dy="1em">​</tspan>designs and signature <tspan x="-455.5530090332031" dy="1em">​</tspan>monogram canvas, <tspan x="-455.5530090332031" dy="1em">​</tspan>becoming a symbol of <tspan x="-455.5530090332031" dy="1em">​</tspan>timeless elegance.</text>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 89.8px;" x="-455.553" y="446.058" transform="matrix(0.15637300908565524, 0, 0, 0.1262060105800629, 0.009020000830787467, 122.40907470001392)">Founded in Florence,<tspan x="-455.5530090332031" dy="1em">​</tspan>Italy, by Guccio Gucci, <tspan x="-455.5530090332031" dy="1em">​</tspan>evolving from a small <tspan x="-455.5530090332031" dy="1em">​</tspan>leather goods workshop <tspan x="-455.5530090332031" dy="1em">​</tspan>to a global luxury brand k<tspan x="-455.5530090332031" dy="1em">​</tspan>nown for its iconic <tspan x="-455.5530090332031" dy="1em">​</tspan>double-G logo.<tspan x="-455.5530090332031" dy="1em">​</tspan></text>
-  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: 'DejaVu Serif', serif; font-size: 89.8px;" x="-455.553" y="446.058" transform="matrix(0.1405950039625168, 0, 0, 0.11100199818611148, 344.7576345318205, 5.197974282472956)">Founded by Christian <tspan x="-455.5530090332031" dy="1em">​</tspan>Dior in Paris, <tspan x="-455.5530090332031" dy="1em">​</tspan>revolutionizing post-war <tspan x="-455.5530090332031" dy="1em">​</tspan>fashion with the "New <tspan x="-455.5530090332031" dy="1em">​</tspan>Look," characterized by <tspan x="-455.5530090332031" dy="1em">​</tspan>full skirts and a nipped <tspan x="-455.5530090332031" dy="1em">​</tspan>waist, shaping the brand <tspan x="-455.5530090332031" dy="1em">​</tspan>into a symbol of <tspan x="-455.5530090332031" dy="1em">​</tspan>sophistication and <tspan x="-455.5530090332031" dy="1em">​</tspan>modern elegance.</text>
-</svg>
-	<div class="d-flex" id="img1">
-		<img src="img/hermestimeline.png" alt="" width="140px"   >
-	</div>	
-	<div class="d-flex" id="img2">
-		<img src="img/lvtimeline.png" alt="" width="110px">
-	</div>
-	<div class="d-flex" id="img3">
-		<img src="img/guccitimeline.png" alt="" width="95px">
-	</div>
-	<div class="d-flex" id="img4">
-		<img src="img/diortimeline.png" alt="" width="90px">
-	</div>
+		<div class="container-fluid" style="margin-top: 15px;">
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-center justify-content-center">
+					<p> Elevate the holiday season to new heights, capturing the enchantment of magical moments with distinctive gifts that embody the sophistication of Louis Vuitton, the glamour of Gucci, and the timeless elegance of Dior's menswear. </p>
+				</div>
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4him.png" class="img-fluid">
+					<div class="overlay-collection">
+						<p> GIFTS FOR HIM </p>
+						<button class="button-collection">EXPLORE THE COLLECTION</button>
+					</div>
+				</div>
+			</div>
 		</div>
-	
 	</section>
-	</body>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-	</html>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>
