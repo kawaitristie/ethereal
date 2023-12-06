@@ -2,136 +2,362 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ethereal</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="script.js"></script>
-<style>
-    p {
-        font-family: 'DejaVu Serif', serif;
-    }
-    #logoheader {
-        font-family: 'Times New Roman', serif;
-        width: 100vw; 
-    height: 100vh;
-    margin-top: 85px;
-    text-align: center;
-    position: fixed;
-    font-size: 85px;
-    transform-origin: center top;
-    }
-    .text-overlay {
-        font-family: 'DejaVu Serif', serif;
-      position: absolute;
-      bottom: 80px; 
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 2vw; 
-      text-align: center;
-    }
-    .text-overlay p {
-      margin-bottom: 7px; 
-    }
-    .custom-button {
-  background-color: white;
-  color: black;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 1vw; 
-  width: 100%; 
-  box-sizing: border-box; 
-}
-.overlay-collection {
-    font-family: 'DejaVu Serif', serif;
-    position: absolute;
-    bottom: 45px; /* Adjust distance from the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 3vw; /* Use vw unit for responsive font size */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.overlay-collection p {
-      margin-bottom: 1px; /* Menyesuaikan jarak antara teks dan tombol */
-    }
-.button-collection {
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-size: 1vw; /* Use vw unit for responsive font size */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.horizontalline{
-	border: 2px solid black ;
-	width: 80%;
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ethereal</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="script.js"></script>
+	<style>
+	body {
+		background-color: black;
+	}
 	
-}
-
-.verticalline{
-	border-left: 2px solid black;
-	height: 100px;
-}
-
-#img1{
-	position: relative;
-	margin-top: -120px;
-	margin-left: 25px;
+	p {
+		font-family: 'DejaVu Serif', serif;
+		color: white;
+	}
 	
-}
+	#logoheader {
+        
+        margin-top: -10px;
+		font-family: 'Times New Roman', serif;
+		font-weight: bold;
+        justify-content: center;
+		font-size: 85px;
+		transform-origin: center top;
+	}
+	
+	.text-overlay {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 80px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 2vw;
+		text-align: center;
+	}
+	
+	.text-overlay p {
+		margin-bottom: 7px;
+	}
+	
+	.custom-button {
+		background-color: white;
+		color: black;
+		padding: 5px 10px;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	.overlay-collection {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 45px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 3vw;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.overlay-collection p {
+		margin-bottom: 1px;
+	}
+	
+	.button-collection {
+		background-color: white;
+		color: black;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+/* Menu */
+.menubar{
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 100%;
+            width: 250px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: white;
+            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+            transition-duration: 0.25s;
+        }
 
-#img2{
-	position: relative;
-	margin-top: -205px;
-	margin-left: 405px;
-}
+        .menubar .menu{
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .menubar .menu .text{
+            color: black;
+            font-size: larger;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+        }
 
-#img3{
-	position: relative;
-	margin-top: 20px;
-	margin-left: 795px;
-}
+        .menubar .menu .item{
+            position: relative;
+            cursor: pointer;
+        }
 
-#img4{
-	position: relative;
-	margin-top: -265px;
-	margin-left: 1158px;
-}
+        .menubar .menu .item a{
+            color: black;
+            font-size: large;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+        }
 
-</style>
+        .menubar .menu .item a:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .menubar .menu .item i{
+            margin-right: 8px;
+        }
+        
+        .Homepage {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+
+        }
+
+/*-bagian jojo*/
+.buttonmenu{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #tombol {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .buttonmenu >span,
+        .buttonmenu >span::before,
+        .buttonmenu >span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(0, 0, 0);
+            transition-duration: 0.25s;
+
+        }
+
+        #tombol{
+            opacity: 0;
+        }
+
+        .buttonmenu >span::before {
+            content: "";
+            top: 10px;
+        }
+
+        .buttonmenu >span::after {
+            content: "";
+            top: 20px;
+        }
+
+        #tombol:checked + .buttonmenu > span{
+            transform: rotate(45deg);
+
+        }
+
+        #tombol:checked + .buttonmenu > span::before{
+            top: 0;
+            transform: rotate(0);
+
+        }
+
+        #tombol:checked + .buttonmenu > span::after{
+            top: 0;
+            transform: rotate(90deg);
+
+        }
+
+        #tombol:checked ~ .menubar{
+            right: 0 !important;
+            transition-duration: 0.25s;
+        }
+/*bagian jojo-*/
+	
+	#timeline {
+		display: flex;
+		background-color: #141414;
+		&:hover {
+			.tl-item {
+				width: 33.3333%;
+			}
+		}
+	}
+	
+	.tl-item {
+		transform: translate3d(0, 0, 0);
+		position: relative;
+		width: 33.3333%;
+		height: 100vh;
+		min-height: 600px;
+		color: #ffff;
+		overflow: hidden;
+		transition: width 0.5s ease;
+		&:before,
+		&:after {
+			transform: translate3d(0, 0, 0);
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		&:after {
+			background: transparentize(#031625, 0.15);
+			opacity: 1;
+			transition: opacity 0.5s ease;
+		}
+		&:before {
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 75%);
+			z-index: 1;
+			opacity: 0;
+			transform: translate3d(0, 0, 0) translateY(50%);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+		&:hover {
+			width: 40% !important;
+			&:after {
+				opacity: 0;
+			}
+			&:before {
+				opacity: 1;
+				transform: translate3d(0, 0, 0) translateY(0);
+				transition: opacity 1s ease, transform 1s ease 0.25s;
+			}
+			.tl-content {
+				opacity: 1;
+				transform: translateY(0);
+				transition: all 0.75s ease 0.5s;
+			}
+			.tl-bg {
+				filter: grayscale(0);
+			}
+		}
+	}
+	
+	.tl-content {
+		transform: translate3d(0, 0, 0) translateY(25px);
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		margin: 0 1.618em;
+		top: 55%;
+		opacity: 0;
+		h1 {
+			font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			color: #1779cf;
+			font-size: 1.44rem;
+			font-weight: normal;
+		}
+	}
+	
+	.tl-year {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1;
+		border-top: 1px solid #ffff;
+		border-bottom: 1px solid #ffff;
+		p {
+			font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 1.728rem;
+			line-height: 0;
+		}
+	}
+	
+	.tl-bg {
+		transform: translate3d(0, 0, 0);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center center;
+		transition: filter 0.5s ease;
+		filter: grayscale(100%);
+	}
+	</style>
 </head>
 
 <body>
-<!-- Menu Bar-->
-<section id="menubar" class="navbar-light bg-light p-5 fixed-top">
-<div class="fixed-top container-fluid position-relative">
-	<nav class="navbar navbar-expand-lg fixed-top">
-	<div id="logoheader" class="container">Ethereal.</div>
-	</nav>
-	<div class="container-fluid position-relative">
-		<div class="fixed-icons-container">
-			<div class="position-fixed top-0 end-0 p-3">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewbox="0 0 16 16">
-				<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-				</svg>
-				<div class="gap-2 d-inline-block"></div>
-				<!-- Menu Bar Icon -->
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
-				<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-				</svg>
-			</div>
+	<!-- Menu Bar-->
+    <section id="menubar" class="navbar-light bg-light p-2 fixed-top">
+        <div class=" container-fluid position-relative fixed-top">
+            <nav class="navbar">
+            <div id="logoheader" class="container">Ethereal.</div>
+            </nav>
+            
+            <div class="container-fluid position-relative">
+                <div class="fixed-icons-container">
+                    <div class="position-fixed top-0 end-0 p-3">
+                        <div class="hamburger-menu">
+                            <input id="tombol" type="checkbox">
+                            <label class="buttonmenu" for="tombol">
+                            <span></span>
+                            </label>
+                        
+                           <div class="menubar">
+                            <div class="menu">
+                                <div class="text">Menu</div>
+                                <div class="item"><a href="man.html"><i class="fa-solid fa-person"></i> Man</a></div>
+                                <div class="item"><a href="woman.html"><i class="fa-solid fa-person-dress"></i> Woman</a></div>
+                            </div>
+                           </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewbox="0 0 16 16" style="margin-top: 40px;">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--Video -->
+	<section id="video-section" style="margin-top: 96px; margin-bottom: 10px;">
+		<div class="col-md-12" style="position: relative;">
+			<video width="75%" height="auto" controls autoplay muted style="margin-left:14%" >
+				<source src="img/video.mp4" type="video/mp4"> </video>
+			<div class="text-overlay">
+				<p> Discover Your Perfect Fashion Fit with
+					<br>Our Trendy Brand Quiz!</p> <a href="quiz.html" class="custom-button">Click Me!</a> </div>
 		</div>
-	</div>
 	</section>
 	<!--About Ethereal -->
 	<div class="container">
@@ -174,16 +400,6 @@
 				<h1 class="f3 text--accent ttu">Dior</h1>
 				<p>Founded by Christian Dior in Paris, revolutionizing post-war fashion with the "New Look," characterized by full skirts and a nipped waist, shaping the brand into a symbol of sophistication and modern elegance. </p>
 			</div>
-		</div>
-	</section>
-	<!--Video -->
-	<section id="video-section" style="margin-top: 30px; margin-bottom: 10px;">
-		<div class="col-md-12" style="position: relative;">
-			<video width="100%" height="auto" controls>
-				<source src="img/video.mp4" type="video/mp4"> </video>
-			<div class="text-overlay">
-				<p> Discover Your Perfect Fashion Fit with
-					<br>Our Trendy Brand Quiz!</p> <a href="quiz.html" class="custom-button">Click Me!</a> </div>
 		</div>
 	</section>
 	<!--Collection -->
