@@ -5,8 +5,520 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
     <style>
+
+body {
+		background-color: black;
+	}
+	
+	p {
+		font-family: 'DejaVu Serif', serif;
+		color: white;
+	}
+	/* Logo CSS */
+	
+	#logoheader {
+		margin-top: -10px;
+		font-family: 'Times New Roman', serif;
+		font-size: 24px;
+		font-weight: bold;
+		justify-content: center;
+		font-size: 85px;
+		transform-origin: center top;
+	}
+	
+	.text-overlay {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 80px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 2vw;
+		text-align: center;
+	}
+	
+	.text-overlay p {
+		margin-bottom: 7px;
+	}
+	
+	.custom-button {
+		background-color: white;
+		color: black;
+		padding: 5px 10px;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	.overlay-collection {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 45px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 3vw;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.overlay-collection p {
+		margin-bottom: 1px;
+	}
+	
+	.button-collection {
+		background-color: white;
+		color: black;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	/* Menu CSS*/
+	
+	.menubar {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 100%;
+		width: 250px;
+		height: 100%;
+		margin: 0;
+		padding: 80px 0;
+		list-style: none;
+		background-color: white;
+		box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+		transition-duration: 0.25s;
+	}
+	
+	.menubar .menu {
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.menubar .menu .text {
+		color: black;
+		font-size: larger;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+	}
+	
+	.menubar .menu .item {
+		position: relative;
+		cursor: pointer;
+	}
+	
+	.menubar .menu .item a {
+		color: black;
+		font-size: large;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+	}
+	
+	.menubar .menu .item a:hover {
+		background-color: black;
+		color: white;
+	}
+	
+	.menubar .menu .item i {
+		margin-right: 8px;
+	}
+	
+	.Homepage {
+		font-family: 'Times New Roman', Times, serif;
+		font-size: 100px;
+		cursor: pointer;
+		text-decoration: none;
+		color: black;
+	}
+	/* Button Menu CSS */
+	
+	.buttonmenu {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		height: 25px;
+		width: 25px;
+		cursor: pointer;
+		z-index: 1;
+	}
+	
+	#tombol {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+	}
+	
+	.buttonmenu >span,
+	.buttonmenu >span::before,
+	.buttonmenu >span::after {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: rgb(0, 0, 0);
+		transition-duration: 0.25s;
+	}
+	
+	#tombol {
+		opacity: 0;
+	}
+	
+	.buttonmenu >span::before {
+		content: "";
+		top: 10px;
+	}
+	
+	.buttonmenu >span::after {
+		content: "";
+		top: 20px;
+	}
+	
+	#tombol:checked + .buttonmenu > span {
+		transform: rotate(45deg);
+	}
+	
+	#tombol:checked + .buttonmenu > span::before {
+		top: 0;
+		transform: rotate(0);
+	}
+	
+	#tombol:checked + .buttonmenu > span::after {
+		top: 0;
+		transform: rotate(90deg);
+	}
+	
+	#tombol:checked ~ .menubar {
+		right: 0 !important;
+		transition-duration: 0.25s;
+	}
+	/*About Ethereal CSS*/
+	
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.sec-title h2 {
+		font-size: 40px;
+		line-height: 1.28em;
+		color: #e1e1e1;
+		font-weight: 600;
+		padding-bottom: 18px;
+		position: relative;
+		display: block;
+	}
+	
+	.sec-title h2:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 50px;
+		height: 3px;
+		background-color: #e1e1e1;
+	}
+	
+	.sec-title .text {
+		font-size: 16px;
+		line-height: 26px;
+		color: #848484;
+		font-weight: 400;
+		margin-top: 35px;
+		position: relative;
+	}
+	
+	.btn-style-one {
+		font-size: 17px;
+		line-height: 30px;
+		color: #f3f3f3;
+		padding: 10px 30px;
+		font-weight: 600;
+		overflow: hidden;
+		letter-spacing: 0.02em;
+		background-color: #141414;
+		position: relative;
+		display: inline-block;
+	}
+	
+	.btn-style-one:hover {
+		background-color: #1b1b1b;
+		color: #ffffff;
+	}
+	
+	.about-section {
+		padding: 120px 0 70px;
+		position: relative;
+	}
+	
+	.about-section .sec-title {
+		margin-bottom: 45px;
+	}
+	
+	.about-section .content-column {
+		margin-bottom: 50px;
+		position: relative;
+	}
+	
+	.about-section .content-column .inner-column {
+		position: relative;
+		padding-left: 30px;
+	}
+	
+	.about-section .text {
+		margin-bottom: 20px;
+		font-size: 16px;
+		line-height: 26px;
+		color: #f3f3f3;
+		font-weight: 400;
+	}
+	
+	.about-section .list-style-one {
+		margin-bottom: 45px;
+	}
+	
+	.about-section .btn-box a {
+		padding: 15px 50px;
+		position: relative;
+	}
+	
+	.about-section .image-column {
+		position: relative;
+	}
+	
+	.about-section .image-column .inner-column {
+		position: relative;
+		padding-left: 80px;
+		padding-bottom: 0px;
+	}
+	
+	.about-section .image-column .inner-column:before {
+		content: '';
+		position: absolute;
+		width: calc(50% + 80px);
+		height: calc(100% + 160px);
+		top: -80px;
+		left: -3px;
+		background: transparent;
+		z-index: 0;
+		border: 44px solid #1b1b1b;
+	}
+	
+	.about-section .image-column .image-2,
+	.about-section .image-column .image-1 {
+		position: relative;
+	}
+	/* Timeline CSS */
+	
+	#timeline {
+		display: flex;
+		background-color: #141414;
+		&:hover {
+			.tl-item {
+				width: 33.3333%;
+			}
+		}
+	}
+	
+	.tl-item {
+		transform: translate3d(0, 0, 0);
+		position: relative;
+		width: 33.3333%;
+		height: 100vh;
+		min-height: 600px;
+		color: #ffff;
+		overflow: hidden;
+		transition: width 0.5s ease;
+		&:before,
+		&:after {
+			transform: translate3d(0, 0, 0);
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		&:after {
+			background: transparentize(#141414, 0.15);
+			opacity: 1;
+			transition: opacity 0.5s ease;
+		}
+		&:before {
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 75%);
+			z-index: 1;
+			opacity: 0;
+			transform: translate3d(0, 0, 0) translateY(50%);
+			transition: opacity 0.5s ease, transform 0.5s ease;
+		}
+		&:hover {
+			width: 40% !important;
+			&:after {
+				opacity: 0;
+			}
+			&:before {
+				opacity: 1;
+				transform: translate3d(0, 0, 0) translateY(0);
+				transition: opacity 1s ease, transform 1s ease 0.25s;
+			}
+			.tl-content {
+				opacity: 1;
+				transform: translateY(0);
+				transition: all 0.75s ease 0.5s;
+			}
+			.tl-bg {
+				filter: grayscale(0);
+			}
+		}
+	}
+	
+	.tl-content {
+		transform: translate3d(0, 0, 0) translateY(25px);
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		margin: 0 1.618em;
+		top: 55%;
+		opacity: 0;
+	}
+	
+	.tl-year {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1;
+		border-top: 1px solid #ffff;
+		border-bottom: 1px solid #ffff;
+	}
+	
+	.tl-bg {
+		transform: translate3d(0, 0, 0);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center center;
+		transition: filter 0.5s ease;
+		filter: grayscale(100%);
+	}
+	/* Collections Overlay (Video, Photo, Text & Button) */
+	
+	.text-overlay {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		bottom: 80px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 2vw;
+		text-align: center;
+	}
+	
+	.text-overlay p {
+		margin-bottom: 7px;
+	}
+	
+	.custom-button {
+		background-color: white;
+		color: black;
+		padding: 5px 10px;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	.overlay-collection {
+		font-family: 'DejaVu Serif', serif;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 3vw;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.overlay-collection p {
+		margin-bottom: 1px;
+	}
+	
+	.button-collection {
+		background-color: white;
+		color: black;
+		border: none;
+		cursor: pointer;
+		font-size: 1vw;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	/* Hover CSS */
+	
+	.image {
+		opacity: 1;
+		display: block;
+		transition: .5s ease;
+		backface-visibility: hidden;
+	}
+	
+	.position-relative:hover .image {
+		opacity: 0.3;
+	}
+	
+	.col-md-12:hover .image {
+		opacity: 0.3;
+	}
+	
+	.hover-effect:hover {
+		color: #e1e1e1;
+		transition: color 0.3s ease;
+	}
+	/*Footer*/
+	
+	.text-footer {
+		text-align: center;
+		margin-top: 15px;
+		color: grey;
+		transition: color 0.3s;
+	}
+	
+	.text-footer:hover {
+		color: darkgray;
+	}
+	
+	.row.justify-content-center i {
+		color: grey;
+		transition: color 0.3s;
+	}
+	
+	.row.justify-content-center i:hover {
+		color: #ffffff;
+	}
+	
+	@media (max-width: 600px) {
+		.text-footer {
+			font-size: 14px;
+		}
+	}
+
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300;1,500&display=swap');
 
         *{
@@ -96,6 +608,7 @@
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
+            z-index: 99;
         }
 
         .menubar .menu{
@@ -142,6 +655,7 @@
             cursor: pointer;
             text-decoration: none;
             color: black;
+            font-weight: bold;
 
         }
 
@@ -157,11 +671,12 @@
     </script>
 </head>
 <body>
-    <div class="hamburger-menu">
-    <input id="tombol" type="checkbox">
-    <label class="buttonmenu" for="tombol">
-    <span></span>
-    </label>
+   <!-- Menu Bar-->
+	<section id="menubar" class="navbar-light bg-light p-2 fixed-top">
+		<div class=" container-fluid position-relative fixed-top">
+			<nav class="navbar">
+				<div id="logoheader" class="container"><a href="index.html" style="text-decoration: none; color: black; font-family: 'Times New Roman', Times, serif;">Ethereal.</a></div>
+			</nav>
 
    <div class="menubar">
     <div class="menu">
@@ -199,11 +714,134 @@
         </div>
         </div>
    </div>
-
-    <center><a class="Homepage" href="index.html">Ethereal</a></center>
-    <br>
-    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Man</h3></center>
-    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Style is not about wearing expensive clothes, but how you combine and show your personality.</p></center>
-
+    </section>
+    <!--Video -->
+	<section id="video-section" style="margin-top: 96px; margin-bottom: 10px;">
+		<div class="col-md-12" style="position: relative;">
+			<video width="75%" height="auto" controls autoplay muted style="margin-left:14%;">
+				<source src="img/video.mp4" type="video/mp4"> </video>
+			<div class="text-overlay">
+				<p> Discover Your Perfect Fashion Fit with
+					<br>Our Trendy Brand Quiz!</p> <a href="quiz.html" class="custom-button">Click Me!</a> </div>
+		</div>
+	</section>
+	<!--About Us-->
+	<section class="about-section">
+		<div class="container">
+			<div class="row">
+				<div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+					<div class="inner-column">
+						<div class="sec-title">
+							<h2>What is Ethereal?</h2> </div>
+						<div class="text">We are an exclusive fashion blog that focuses on high-end collections, with the main goal of providing in-depth comparisons of three leading brands: Gucci, Louis Vuitton (LV), and Dior. Our website regularly updates fashion collections each season, ensuring our users always receive the latest information. Additionally, we offer interactive quizzes designed to help users discover which high-end brand aligns best with their personal style. By presenting informative and entertaining content, we are committed to be the ultimate destination for fashion enthusiasts who want to stay up-to-date with the latest trends from renowned brands. Welcome to the world of high-end fashion with the exclusive touch of our collection! </div>
+						<div class="btn-box"> <a href="mailto:ethereal@contact.com" class="theme-btn btn-style-one">Contact Us</a> </div>
+					</div>
+				</div>
+				<!-- Image Column -->
+				<div class="image-column col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-column wow fadeInLeft">
+						<figure class="image-1">
+							<a href="#" class="lightbox-image" data-fancybox="images"> <img src="img/ethereal_about.jpg" alt="Ethereal Image"> </a>
+						</figure>
+					</div>
+				</div>
+			</div>
+	</section>
+	<!--Timeline-->
+	<section id="timeline" style="margin-top: 15px;">
+		<div class="tl-item">
+			<div class="tl-bg" style="background-image: url('img/lvtimeline')"></div>
+			<div class="tl-year">
+				<p class="f2 heading--sanSerif">1854</p>
+			</div>
+			<div class="tl-content">
+				<h1>Louis Vuitton</h1>
+				<p>Established in Paris, France, by Louis Vuitton, renowned for its innovative luggage designs and signature monogram canvas, becoming a symbol of timeless elegance.</p>
+			</div>
+		</div>
+		<div class="tl-item">
+			<div class="tl-bg" style="background-image: url('img/guccitimeline.avif')"></div>
+			<div class="tl-year">
+				<p class="f2 heading--sanSerif">1921</p>
+			</div>
+			<div class="tl-content">
+				<h1 class="f3 text--accent ttu">Gucci</h1>
+				<p>Founded in Florence, Italy, by Guccio Gucci, evolving from a small leather goods workshop to a global luxury brand known for its iconic double-G logo. </p>
+			</div>
+		</div>
+		<div class="tl-item">
+			<div class="tl-bg" style="background-image: url('img/diortimeline.avif')"></div>
+			<div class="tl-year">
+				<p class="f2 heading--sanSerif">1947</p>
+			</div>
+			<div class="tl-content">
+				<h1 class="f3 text--accent ttu">Dior</h1>
+				<p>Founded by Christian Dior in Paris, revolutionizing post-war fashion with the "New Look," characterized by full skirts and a nipped waist, shaping the brand into a symbol of sophistication and modern elegance. </p>
+			</div>
+		</div>
+	</section>
+	<!--Collection -->
+	<section id="collection">
+		<div class="container-fluid" style="margin-top: 15px;">
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/lvphoto.png" class="img-fluid image">
+					<div class="overlay-collection">
+						<p> LOUIS VUITTON </p> <a href="lv.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
+				</div>
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gucciphoto.png" class="img-fluid image">
+					<div class="overlay-collection">
+						<p> GUCCI </p> <a href="gucci.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid" style="margin-top: 15px;">
+			<div class="row">
+				<div class="col-md-12" style="position: relative;"> <img src="img/diorphoto.png" class="img-fluid image">
+					<div class="overlay-collection">
+						<p> DIOR </p> <a href="dior.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Gifts -->
+	<section id="gifts">
+		<div class="container-fluid" style="margin-top: 15px;">
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4her.png" class="img-fluid image">
+					<div class="overlay-collection">
+						<p class="hover-effect"> GIFTS FOR HER </p> <a href="giftsher.html" class="button-collection">EXPLORE THE COLLECTION</a> </div>
+				</div>
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4him.png" class="img-fluid image">
+					<div class="overlay-collection">
+						<p class="hover-effect"> GIFTS FOR HIM </p> <a href="giftshim.html" class="button-collection">EXPLORE THE COLLECTION</a> </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Footer-->
+	<section id="footer">
+		<div class="container mt-5">
+			<div class="row justify-content-center">
+				<div class="col-auto"> <i class="bi bi-facebook"></i> </div>
+				<div class="col-auto"> <i class="bi bi-instagram"></i> </div>
+				<div class="col-auto"> <i class="bi bi-youtube"></i> </div>
+				<div class="col-auto"> <i class="bi bi-twitter-x"></i> </div>
+			</div>
+		</div>
+		<p class="text-footer">Copyright © 2023 Ethereal - All rights reserved</p>
+	</section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+$(function() {
+	$(window).scroll(function() {
+		var mass = Math.max(50, 85 - 0.1 * $(this).scrollTop()) + 'px';
+		$('#logoheader').css({
+			'font-size': mass,
+			'line-height': mass
+		});
+	});
+});
+</script>
 </body>
 </html>

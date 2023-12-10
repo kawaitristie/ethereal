@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300;1,500&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+/* Sidebar Menu */
+        .buttonmenu{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #tombol {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .buttonmenu >span,
+        .buttonmenu >span::before,
+        .buttonmenu >span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(0, 0, 0);
+            transition-duration: 0.25s;
+
+        }
+
+        #tombol{
+            opacity: 0;
+        }
+
+        .buttonmenu >span::before {
+            content: "";
+            top: -7px;
+        }
+
+        .buttonmenu >span::after {
+            content: "";
+            top: 7px;
+        }
+
+        #tombol:checked + .buttonmenu > span{
+            transform: rotate(45deg);
+
+        }
+
+        #tombol:checked + .buttonmenu > span::before{
+            top: 0;
+            transform: rotate(0);
+
+        }
+
+        #tombol:checked + .buttonmenu > span::after{
+            top: 0;
+            transform: rotate(90deg);
+
+        }
+
+        #tombol:checked ~ .menubar{
+            right: 0 !important;
+            transition-duration: 0.25s;
+        }
+
+/* Menu */
+        .menubar{
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 100%;
+            width: 250px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: white;
+            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+            transition-duration: 0.25s;
+            overflow: scroll;
+        }
+
+        .menubar .menu{
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .menubar .menu .item{
+            position: relative;
+            cursor: pointer;
+        }
+
+        .menubar .menu .item a{
+            color: black;
+            font-size: large;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+        }
+
+        .menubar .menu .item a:hover{
+            background-color: black;
+            color: white;
+        }
+
+        .menubar .menu .item i{
+            margin-right: 8px;
+        }
+
+        .menubar .menu .item .submenu{
+            background: rgb(238, 238, 238);
+            display: none;
+        }
+
+        .menubar .menu .submenu a{
+            padding: 20px;
+            font-size: small;
+        }
+
+        .Homepage {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+
+        }
+
+/* Konten Gambar */
+
+        .gambar{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            margin: 150px;
+            margin-top: 10px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 500px;
+            height: 500px;
+        }
+
+        .konten {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .konten h4{
+            text-align: center;
+        }
+
+        .konten p{
+            color: gray;
+            text-align: justify;
+        }
+
+        button{
+            background-color: white;
+            color: black;
+            border-radius: 15px;
+            height: 50px;
+            width: 655px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+
+        @media (max-width:1000px){
+            .gambar{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                margin: 20px;
+                align-items: center;
+            }
+
+            img{
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .konten{
+               text-align: center;
+            }
+
+            .konten p{
+                text-align: center;
+            }
+        }
+
+        @media (max-width:800px){
+            .gambar{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                margin: 20px;
+                align-items: center;
+            }
+
+            img{
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .konten{
+               text-align: center;
+            }
+
+            .konten p{
+                text-align: center;
+            }
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+        $('.subtombol').click(function(){
+            $(this).next('.submenu').slideToggle();
+        });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="hamburger-menu">
+    <input id="tombol" type="checkbox">
+    <label class="buttonmenu" for="tombol">
+    <span></span>
+    </label>
+
+   <div class="menubar">
+    <div class="menu">
+        <div class="item">
+            <a class="subtombol"> Wear</a>
+            <div class="submenu">
+                <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
+                <a href="Sman.html" class="subitem"> Shirts</a>
+                <a href="K&Sman.html" class="subitem"> Knitwear & Sweatshirts</a>
+                <a href="Oman.html" class="subitem"> Outerwear</a>
+                <a href="Cman.html" class="subitem"> Coats</a>
+                <a href="P&Sman.html" class="subitem"> Pants & Shorts</a>
+                <a href="F&Tman.html" class="subitem"> Formal Wear & Tailoring</a>
+                <a href="Dman.html" class="subitem"> Denim</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="subtombol"> Accesories</a>
+            <div class="submenu">
+                <a href="Bman.html" class="subitem"> Belt</a>
+                <a href="Eman.html" class="subitem"> Eyewear</a>
+                <a href="Tman.html" class="subitem"> Ties</a>
+                <a href="H&Gman.html" class="subitem"> Hats & Gloves</a>
+                <a href="Soman.html" class="subitem"> Socks</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="subtombol"> Shoes</a>
+            <div class="submenu">
+                <a href="Snman.html" class="subitem"> Sneakers</a>
+                <a href="Boman.html" class="subitem"> Boots</a>
+                <a href="L&Lman.html" class="subitem"> Loafers & Lace-Up Shoes</a>
+                <a href="S&Sman.html" class="subitem"> Sandals & Slippers</a>
+            </div>
+        </div>
+        </div>
+   </div>
+
+    <center><a class="Homepage" href="index.html">Ethereal</a></center>
+    <br>
+    <br>
+    <div class="gambar">
+        <img src="img/Light-Ripstop-nylon-cargo-pant purple (Man).png" alt="">
+        <div class="konten">
+        <p>GUCCI</p>
+        <h3>RIPSTOP NYLON CARGO PANT</h3>
+            <p>Purple ripstop nylon</p>
+            <p><br></p>
+            <h4>Description</h4>
+            <p>Looks from the Cruise 2024 Aprés Ski selection combine functionality with a stylish touch. Padded leather, fleece, and other fabrics are updated with new logo details. These cargo pants are presented in ripstop nylon and enriched with a Gucci embossed detail.</p>
+            <p><br></p>
+            <h4>$ 2,300</h4>
+            <button> Buy Now</button>
+            <p><br></p>
+            <p><br></p>
+            <p><br></p>
+            <p><br></p>
+
+        </div>
+        </div>
+    </body>
+    </html>
+

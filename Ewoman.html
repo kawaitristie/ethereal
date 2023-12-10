@@ -77,7 +77,7 @@
         }
 
         #tombol:checked ~ .menubar{
-            right: 100% !important;
+            right: 0 !important;
             transition-duration: 0.25s;
         }
 
@@ -86,13 +86,13 @@
             display: block;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 100%;
             width: 250px;
             height: 100%;
             margin: 0;
             padding: 80px 0;
             list-style: none;
-            backdrop-filter: blur(15px);
+            background-color: white;
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
@@ -101,6 +101,18 @@
         .menubar .menu{
             width: 100%;
             margin-top: 20px;
+        }
+
+        .menubar .menu .text{
+            color: black;
+            background-color: whitesmoke;
+            font-size: larger;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+            text-align: center;
         }
 
         .menubar .menu .item{
@@ -142,7 +154,52 @@
             cursor: pointer;
             text-decoration: none;
             color: black;
+            font-weight: bold;
+        }
+/* Isi Konten */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-gap: 80px;
+            margin: 50px;
+        }
 
+        img {
+            object-fit: cover;
+            width: 400px;
+            height: 300px;
+        }
+
+        .grid article {
+            box-shadow: 0 0 5px 0 black;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform;
+        }
+
+        .grid article img {
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .isi {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid article:hover{
+            scale: 1.1;
+        }
+
+        .grid article a{
+            font-size: small;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500px;
+            text-decoration: none;
+            color: black;
+            
         }
 
 
@@ -154,6 +211,7 @@
         });
         });
     </script>
+
 </head>
 <body>
     <div class="hamburger-menu">
@@ -162,53 +220,147 @@
     <span></span>
     </label>
 
-   <div class="menubar">
-    <div class="menu">
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
-            <div class="submenu">
-                <a href="Twoman.html" class="subitem"> Top</a>
-                <a href="Dwoman.html" class="subitem"> Dress</a>
-                <a href="S&Swoman.html" class="subitem"> Skirts & Shorts</a>
-                <a href="Pwoman.html" class="subitem"> Pants</a>
-                <a href="Kwoman.html" class="subitem"> Knitwear</a>
-                <a href="Dewoman.html" class="subitem"> Denim</a>
-                <a href="Jwoman.html" class="subitem"> Jackets</a>
-                <a href="Cwoman.html" class="subitem"> Coats</a>
+    <div class="menubar">
+        <div class="menu">
+            <div class="item">
+                <a class="subtombol">Wear</a>
+                <div class="submenu">
+                    <a href="Twoman.html" class="subitem"> Top</a>
+                    <a href="Dwoman.html" class="subitem"> Dress</a>
+                    <a href="S&Swoman.html" class="subitem"> Skirts & Shorts</a>
+                    <a href="Pwoman.html" class="subitem"> Pants</a>
+                    <a href="Kwoman.html" class="subitem"> Knitwear</a>
+                    <a href="Dewoman.html" class="subitem"> Denim</a>
+                    <a href="Jwoman.html" class="subitem"> Jackets</a>
+                    <a href="Cwoman.html" class="subitem"> Coats</a>
+                </div>
+            </div>
+            <div class="item">
+                <a class="subtombol">Accesories</a>
+                <div class="submenu">
+                    <a href="Bwoman.html" class="subitem"> Belt</a>
+                    <a href="Ewoman.html" class="subitem"> Eyewear</a>
+                    <a href="Si&Scwoman.html" class="subitem"> Silks & Scarves</a>
+                    <a href="H&Gwoman.html" class="subitem"> Hats & Gloves</a>
+                    <a href="S&Twoman.html" class="subitem"> Socks & Tights</a>
+                </div>
+            </div>
+            <div class="item">
+                <a class="subtombol">Shoes</a>
+                <div class="submenu">
+                    <a href="S&Bwoman.html" class="subitem"> Sneakers & Boots</a>
+                    <a href="Sa&Slwoman.html" class="subitem"> Sandals & Slides</a>
+                    <a href="L&Lwoman.html" class="subitem"> Loafers & Lace-Up</a>
+                    <a href="P&Hwoman.html" class="subitem"> Pums & High Heels</a>
+                </div>
+            </div>
+            <div class="item">
+                <a class="subtombol"></i> Bags</a>
+                <div class="submenu">
+                    <a href="BGwoman.html" class="subitem"> Iconic Bag From Gucci</a>
+                    <a href="BLwoman.html" class="subitem"> Iconic Bag From LV</a>
+                    <a href="BDwoman.html" class="subitem"> Iconic Bag From Dior</a>
+                </div>
             </div>
         </div>
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
-            <div class="submenu">
-                <a href="Bwoman.html" class="subitem"> Belt</a>
-                <a href="Ewoman.html" class="subitem"> Eyewear</a>
-                <a href="Si&Scwoman.html" class="subitem"> Silks & Scarves</a>
-                <a href="H&Gwoman.html" class="subitem"> Hats & Gloves</a>
-                <a href="S&Twoman.html" class="subitem"> Socks & Tights</a>
-            </div>
+       </div>
+    
+        <center><a class="Homepage" href="index.html">Ethereal.</a></center>
+        <br>
+        <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Eyewear</h3></center>
+        <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">See the world through the lens of confidence, adorned with frames of grace. Your vision, a reflection of strength and style, speaks louder than words in the language of chic elegance.</p></center>
+        <br>
+        <br>
+        <br>
+        <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Dior</h3></center>
+        <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Eyewear</p></center>
+        <div class="containerimg">
+            <main class="grid">
+                <article>
+                    <img src="img/30MONTAIGNE S11F(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="30montaignes11f.html">30Montaigne S11F</a>
+                        <a href="30montaignes11f.html">$ 650</a>
+                    </div>
+                    <br>
+                </article>
+                <article>
+                    <img src="img/CDIOR S1F(woman).avif" alt="Eyewear" >
+                    <div class="isi">
+                        <a href="cdiors1f.html">CDIOR S1F  </a>
+                        <a href="cdior1sf.html">$ 550</a>
+                    </div>
+                    <br>
+                </article>
+                <article>
+                    <img src="img/CDIOR S1F(woman) (2).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="cdiors1f.html">CDIOR S1F</a>
+                        <a href="cdiors1f.html">$ 550</a>
+                    </div>
+                    <br>
+                </article>
+            </main>
         </div>
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i> Shoes</a>
-            <div class="submenu">
-                <a href="S&Bwoman.html" class="subitem"> Sneakers & Boots</a>
-                <a href="Sa&Slwoman.html" class="subitem"> Sandals & Slides</a>
-                <a href="L&Lwoman.html" class="subitem"> Loafers & Lace-Up</a>
-                <a href="P&Hwoman.html" class="subitem"> Pums & High Heels</a>
-            </div>
+        <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Gucci</h3></center>
+        <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Eyewear</p></center>    
+        <div class="containerimg">
+            <main class="grid">
+                <article>
+                    <img src="img/MASK-SHAPED FRAME SUNGLASSES(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="mask-shapedframesunglasses.html">Mask-Shaped Frame Sunglasses</a>
+                        <a href="mask-shapedframesunglasses.html">$ 390</a>
+                    </div>
+                    <br>
+                </article>
+                <article>
+                    <img src="img/RECTANGULAR OPTICAL FRAME(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="thinbeltwithdoublegbuckle.html">RECTANGULAR OPTICAL FRAME</a>
+                        <a href="thinbeltwithdoublegbuckle.html">$ 550</a>
+                    </div>
+                    <br>
+                </article>
+                <article>
+                    <img src="img/CAT-EYE OPTICAL FRAME(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="cat-eyeopticalframe.html">Cat-Eye Optical Frame</a>
+                        <a href="cat-eyeopticalframe.html">$ 465</a>
+                    </div>
+                    <br>
+                </article>
+            </main>
         </div>
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-bag-shopping"></i> Bags</a>
-            <div class="submenu">
-                <a href="BGwoman.html" class="subitem"> Iconic Bag From Gucci</a>
-                <a href="BLwoman.html" class="subitem"> Iconic Bag From LV</a>
-                <a href="BDwoman.html" class="subitem"> Iconic Bag From Dior</a>
-            </div>
+        <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Louis Vuitton</h3></center>
+        <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Eyewear</p></center>
+            <div class="containerimg">
+            <main class="grid">
+                <article>
+                    <img src="img/My Monogram Round Sunglasses(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="mymonogramroundsunglasses.html">My Monogram Round Sunglasses</a>
+                        <a href="mymonogramroundsunglasses.html">$ 450</a>
+                    </div>
+                    <br>
+                </article>
+                <article>
+                    <img src="img/LV Link PM Cat Eye Sunglasses(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="lvlinkpmcateyesunglasses.html">LV Link PM Cat Eye Sunglasses</a>
+                        <a href="lvlinkpmcateyesunglasses.html">$ 700</a>
+                    </div>
+                    <br>
+                </article>
+                <article>
+                    <img src="img/LV Petit Soupçon Cat Eye Sunglasses(woman).avif" alt="Eyewear">
+                    <div class="isi">
+                        <a href="lvpetitsoupconcateyesunglasses.html">LV Petit Soupçon Cat Eye Sunglasses</a>
+                        <a href="lvpetitsoupconcateyesunglasses.html">$ 850</a>
+                    </div>
+                    <br>
+                </article>
+            </main>
         </div>
-    </div>
-   </div>
-   <center><a class="Homepage" href="index.html">Ethereal</a></center>
-   <br>
-   <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Eyewear</h3></center>
-   <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">In every piece of knitting, there is love and care that melts into the threads, creating a wearable work of art.</p></center>
-</body>
-</html>
+        </body>
+        </html>

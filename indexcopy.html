@@ -20,12 +20,11 @@
 	/* Logo CSS */
 	
 	#logoheader {
-        
-        margin-top: -10px;
+		margin-top: -10px;
 		font-family: 'Times New Roman', serif;
 		font-size: 24px;
 		font-weight: bold;
-        justify-content: center;
+		justify-content: center;
 		font-size: 85px;
 		transform-origin: center top;
 	}
@@ -83,133 +82,129 @@
 		width: 100%;
 		box-sizing: border-box;
 	}
-/* Menu */
-.menubar{
-            display: block;
-            position: fixed;
-            top: 0;
-            right: 100%;
-            width: 250px;
-            height: 100%;
-            margin: 0;
-            padding: 80px 0;
-            list-style: none;
-            background-color: white;
-            box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
-            transition-duration: 0.25s;
-        }
-
-        .menubar .menu{
-            width: 100%;
-            margin-top: 20px;
-        }
-        
-        .menubar .menu .text{
-            color: black;
-            font-size: larger;
-            text-decoration: none;
-            display: block;
-            padding: 15px 20px;
-            line-height: 20px;
-        }
-
-        .menubar .menu .item{
-            position: relative;
-            cursor: pointer;
-        }
-
-        .menubar .menu .item a{
-            color: black;
-            font-size: large;
-            text-decoration: none;
-            display: block;
-            padding: 15px 20px;
-            line-height: 20px;
-        }
-
-        .menubar .menu .item a:hover{
-            background-color: black;
-            color: white;
-        }
-
-        .menubar .menu .item i{
-            margin-right: 8px;
-        }
-        
-        .Homepage {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 100px;
-            cursor: pointer;
-            text-decoration: none;
-            color: black;
-
-        }
-
-/*-bagian jojo*/
-.buttonmenu{
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            height: 25px;
-            width: 25px;
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        #tombol {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-
-        .buttonmenu >span,
-        .buttonmenu >span::before,
-        .buttonmenu >span::after {
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: rgb(0, 0, 0);
-            transition-duration: 0.25s;
-
-        }
-
-        #tombol{
-            opacity: 0;
-        }
-
-        .buttonmenu >span::before {
-            content: "";
-            top: 10px;
-        }
-
-        .buttonmenu >span::after {
-            content: "";
-            top: 20px;
-        }
-
-        #tombol:checked + .buttonmenu > span{
-            transform: rotate(45deg);
-
-        }
-
-        #tombol:checked + .buttonmenu > span::before{
-            top: 0;
-            transform: rotate(0);
-
-        }
-
-        #tombol:checked + .buttonmenu > span::after{
-            top: 0;
-            transform: rotate(90deg);
-
-        }
-
-        #tombol:checked ~ .menubar{
-            right: 0 !important;
-            transition-duration: 0.25s;
-        }
-/*bagian jojo-*/
+	/* Menu CSS*/
+	
+	.menubar {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 100%;
+		width: 250px;
+		height: 100%;
+		margin: 0;
+		padding: 80px 0;
+		list-style: none;
+		background-color: white;
+		box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+		transition-duration: 0.25s;
+	}
+	
+	.menubar .menu {
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.menubar .menu .text {
+		color: black;
+		font-size: larger;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+	}
+	
+	.menubar .menu .item {
+		position: relative;
+		cursor: pointer;
+	}
+	
+	.menubar .menu .item a {
+		color: black;
+		font-size: large;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+	}
+	
+	.menubar .menu .item a:hover {
+		background-color: black;
+		color: white;
+	}
+	
+	.menubar .menu .item i {
+		margin-right: 8px;
+	}
+	
+	.Homepage {
+		font-family: 'Times New Roman', Times, serif;
+		font-size: 100px;
+		cursor: pointer;
+		text-decoration: none;
+		color: black;
+	}
+	/* Button Menu CSS */
+	
+	.buttonmenu {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		height: 25px;
+		width: 25px;
+		cursor: pointer;
+		z-index: 1;
+	}
+	
+	#tombol {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+	}
+	
+	.buttonmenu >span,
+	.buttonmenu >span::before,
+	.buttonmenu >span::after {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: rgb(0, 0, 0);
+		transition-duration: 0.25s;
+	}
+	
+	#tombol {
+		opacity: 0;
+	}
+	
+	.buttonmenu >span::before {
+		content: "";
+		top: 10px;
+	}
+	
+	.buttonmenu >span::after {
+		content: "";
+		top: 20px;
+	}
+	
+	#tombol:checked + .buttonmenu > span {
+		transform: rotate(45deg);
+	}
+	
+	#tombol:checked + .buttonmenu > span::before {
+		top: 0;
+		transform: rotate(0);
+	}
+	
+	#tombol:checked + .buttonmenu > span::after {
+		top: 0;
+		transform: rotate(90deg);
+	}
+	
+	#tombol:checked ~ .menubar {
+		right: 0 !important;
+		transition-duration: 0.25s;
+	}
+	/* Timeline CSS */
 	
 	#timeline {
 		display: flex;
@@ -403,55 +398,38 @@
 
 <body>
 	<!-- Menu Bar-->
-    <section id="menubar" class="navbar-light bg-light p-2 fixed-top">
-        <div class=" container-fluid position-relative fixed-top">
-            <nav class="navbar">
-            <div id="logoheader" class="container">Ethereal.</div>
-            </nav>
-            
-            <div class="container-fluid position-relative">
-                <div class="fixed-icons-container">
-                    <div class="position-fixed top-0 end-0 p-3">
-                        <div class="hamburger-menu">
-                            <input id="tombol" type="checkbox">
-                            <label class="buttonmenu" for="tombol">
-                            <span></span>
-                            </label>
-                        
-                           <div class="menubar">
-                            <div class="menu">
-                                <div class="text">Menu</div>
-                                <div class="item"><a href="man.html"><i class="fa-solid fa-person"></i> Man</a></div>
-                                <div class="item"><a href="woman.html"><i class="fa-solid fa-person-dress"></i> Woman</a></div>
-                            </div>
-                           </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewbox="0 0 16 16" style="margin-top: 40px;">
-                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <!--Video -->
-	<section id="video-section" style="margin-top: 96px; margin-bottom: 10px;">
+	<section id="menubar" class="navbar-light bg-light p-2 fixed-top">
+		<div class=" container-fluid position-relative fixed-top">
+			<nav class="navbar">
+				<div id="logoheader" class="container">Ethereal.</div>
+			</nav>
+			<div class="container-fluid position-relative">
+				<div class="fixed-icons-container">
+					<div class="position-fixed top-0 end-0 p-3">
+						<div class="hamburger-menu">
+							<input id="tombol" type="checkbox">
+							<label class="buttonmenu" for="tombol"> <span></span> </label>
+							<div class="menubar">
+								<div class="menu">
+									<div class="text">Menu</div>
+									<div class="item"><a href="man.html"><i class="fa-solid fa-person"></i> Man</a></div>
+									<div class="item"><a href="woman.html"><i class="fa-solid fa-person-dress"></i> Woman</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</section>
+	<!--Video -->
+	<section id="video-section" style="margin-top: 115px; margin-bottom: 10px;">
 		<div class="col-md-12" style="position: relative;">
-			<video width="75%" height="auto" controls autoplay muted style="margin-left:14%" >
+			<video width="75%" height="auto"  autoplay muted style="margin-left:14%">
 				<source src="img/video.mp4" type="video/mp4"> </video>
 			<div class="text-overlay">
 				<p> Discover Your Perfect Fashion Fit with
 					<br>Our Trendy Brand Quiz!</p> <a href="quiz.html" class="custom-button">Click Me!</a> </div>
 		</div>
 	</section>
-	<!--About Ethereal -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-7 col-xs-12" style="margin-top: 300px;">
-				<h1 style="color:whitesmoke;">What is Ethereal?</h1>
-				<p>A premier fashion blog specializing in high-end collections, focusing on Gucci, Louis Vuitton (LV), and Dior. Our site features timely updates on seasonal fashion, and our interactive quizzes assist users in finding their ideal high-end brand based on personal style. Committed to being the ultimate destination for fashion enthusiasts, we provide informative and entertaining content, welcoming you to the exclusive world of high-end fashion with our unique collection.</p>
-			</div>
-			<div class="col-xl-5 col-xs-12" style="margin-top: 7rem;"> <img src="img/etherealdrawing.png" width="100%"> </div>
-		</div>
-	</div>
 	<!--Timeline-->
 	<section id="timeline">
 		<div class="tl-item">
@@ -489,11 +467,11 @@
 	<section id="collection">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/lvphoto.png" class="img-fluid">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/lvphoto.png" class="img-fluid image">
 					<div class="overlay-collection">
 						<p> LOUIS VUITTON </p> <a href="lv.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
 				</div>
-				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gucciphoto.png" class="img-fluid">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gucciphoto.png" class="img-fluid image">
 					<div class="overlay-collection">
 						<p> GUCCI </p> <a href="gucci.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
 				</div>
@@ -501,7 +479,7 @@
 		</div>
 		<div class="container-fluid" style="margin-top: 15px;">
 			<div class="row">
-				<div class="col-md-12" style="position: relative;"> <img src="img/diorphoto.png" class="img-fluid">
+				<div class="col-md-12" style="position: relative;"> <img src="img/diorphoto.png" class="img-fluid image">
 					<div class="overlay-collection">
 						<p> DIOR </p> <a href="dior.html" class="button-collection">CLICK HERE FOR WINTER COLLECTION</a> </div>
 				</div>
@@ -512,27 +490,23 @@
 	<section id="gifts" style="margin-top: 15px;">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4her.png" class="img-fluid">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4her.png" class="img-fluid image">
 					<div class="overlay-collection">
-						<p> GIFTS FOR HER </p>
-						<button class="button-collection">EXPLORE THE COLLECTION</button>
-					</div>
+						<p class="hover-effect"> GIFTS FOR HER </p> <a href="giftsher.html" class="button-collection">EXPLORE THE COLLECTION</a> </div>
 				</div>
-				<div class="col-md-6 d-flex align-items-center justify-content-center">
+				<div class="col-md-6 d-flex align-items-center justify-content-center hover-effect">
 					<p> Explore exquisite gifts, carefully selected from the timeless elegance of Dior, the avant-garde luxury of Louis Vuitton (LV), and the sophisticated allure of Gucci's collections for women. Unveil promises of delightful moments that will add an enchanting sparkle to your year-end celebrations. </p>
 				</div>
 			</div>
 		</div>
 		<div class="container-fluid" style="margin-top: 15px;">
 			<div class="row">
-				<div class="col-md-6 d-flex align-items-center justify-content-center">
-					<p> Elevate the holiday season to new heights, capturing the enchantment of magical moments with distinctive gifts that embody the sophistication of Louis Vuitton, the glamour of Gucci, and the timeless elegance of Dior's menswear. </p>
+				<div class="col-md-6 d-flex align-items-center justify-content-center hover-effect">
+					<p class="hover-effect">Elevate the holiday season to new heights, capturing the enchantment of magical moments with distinctive gifts that embody the sophistication of Louis Vuitton, the glamour of Gucci, and the timeless elegance of Dior's menswear.</p>
 				</div>
-				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4him.png" class="img-fluid">
+				<div class="col-md-6 d-flex align-items-center justify-content-center position-relative"> <img src="img/gifts4him.png" class="img-fluid image">
 					<div class="overlay-collection">
-						<p> GIFTS FOR HIM </p>
-						<button class="button-collection">EXPLORE THE COLLECTION</button>
-					</div>
+						<p> GIFTS FOR HIM </p> <a href="giftshim.html" class="button-collection">EXPLORE THE COLLECTION</a> </div>
 				</div>
 			</div>
 		</div>

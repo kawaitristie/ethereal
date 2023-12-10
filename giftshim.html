@@ -1,148 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>Gifts for Her</title>
-  <style>
-    body {
-      background-color: black;
-    }
 
-    p {
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gifts for Him</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+	<style>
+	p {
+		font-family: 'DejaVu Serif', serif;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/* Menu */
+	
+	.menubar {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 100%;
+		width: 250px;
+		height: 100%;
+		margin: 0;
+		padding: 80px 0;
+		list-style: none;
+		background-color: white;
+		box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+		transition-duration: 0.25s;
+		overflow: scroll;
+	}
+	
+	.menubar .menu {
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.menubar .menu .text {
+		color: black;
+		background-color: whitesmoke;
+		font-size: larger;
+		font-weight: 500;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+		text-align: center;
+	}
+	
+	.menubar .menu .item {
+		position: relative;
+		cursor: pointer;
+	}
+	
+	.menubar .menu .item a {
+		color: black;
+		font-size: large;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+	}
+	
+	.menubar .menu .item a:hover {
+		background-color: black;
 		color: white;
 	}
-    .center-text {
-      text-align: center;
-    }
-
-    .larger-text {
-      font-size: 2em; /* Adjust the size as needed */
-    }
-  </style>
+	
+	.menubar .menu .item i {
+		margin-right: 8px;
+	}
+	
+	.menubar .menu .item .submenu {
+		background: rgb(238, 238, 238);
+		display: none;
+	}
+	
+	.menubar .menu .submenu a {
+		padding: 20px;
+		font-size: small;
+	}
+	
+	.Homepage {
+		font-family: 'Times New Roman', Times, serif;
+		font-size: 100px;
+		cursor: pointer;
+		text-decoration: none;
+		color: black;
+		font-weight: bold;
+	}
+	/*Isi Konten*/
+	
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		grid-gap: 80px;
+		margin: 50px;
+	}
+	
+	img {
+		object-fit: cover;
+		width: 400px;
+		height: 300px;
+	}
+	
+	.grid article {
+		box-shadow: 0 0 5px 0 black;
+		border-radius: 5px;
+		text-align: center;
+		transition: transform;
+	}
+	
+	.grid article img {
+		border-top-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	
+	.isi {
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.grid article:hover {
+		transform: scale(1.1);
+	}
+	
+	.grid article a {
+		font-size: small;
+		font-family: 'Times New Roman', Times, serif;
+		font-weight: 500px;
+		text-decoration: none;
+		color: black;
+	}
+	
+	@media (max-width: 768px) {
+		.grid {
+			grid-template-columns: 1fr;
+			grid-gap: 20px;
+			margin: 20px;
+		}
+		.containerimg {
+			width: 100%;
+		}
+	}
+	</style>
+	<script>
+	$(document).ready(function() {
+		$('.subtombol').click(function() {
+			$(this).next('.submenu').slideToggle();
+		});
+	});
+	</script>
 </head>
+
 <body>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mt-3 mb-0">
-            <p class="center-text font-weight-bold larger-text">DIOR</p>
-          </div>
-        </div>
-      </div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-md-4">
-      <img src="img/giftshimdior_1.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">TIES</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftshimdior_2.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">SMALL LEATHER GOODS</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftshimdior_3.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">SHOES</p>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-md-4">
-      <img src="img/giftshimdior_4.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">BAG</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftshimdior_5.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">CAP</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftshimdior_6.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">SCARF</p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-12 text-center mt-3 mb-0">
-        <p class="center-text font-weight-bold larger-text">LV</p>
-      </div>
-    </div>
-  </div>
-<div class="container mt-3">
-<div class="row">
-<div class="col-md-4">
-  <img src="img/giftshimlv_1.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">WATCH</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftshimlv_2.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">PARFUME</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftshimlv_3.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">SMALL LEATHER GOODS</p>
-</div>
-</div>
-
-<div class="row mt-3">
-<div class="col-md-4">
-  <img src="img/giftshimlv_4.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">SCARF</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftshimlv_5.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">TOYS</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftshimlv_6.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">SHOES</p>
-</div>
-</div>
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-12 text-center mt-3 mb-0">
-        <p class="center-text font-weight-bold larger-text">GUCCI</p>
-      </div>
-    </div>
-  </div>
-
-<div class="container mt-3">
-<div class="row">
-    <div class="col-md-4">
-        <img src="img/giftshimgucci_1.avif" class="img-fluid">
-        <p class="center-text font-weight-bold">SMALL LEATHER GOODS</p>
-      </div>
-      <div class="col-md-4">
-        <img src="img/giftshimgucci_2.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">BELT</p>
-        </div>
-      
-        <div class="col-md-4">
-          <img src="img/giftshimgucci_3.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">CAP</p>
-        </div>
-
-<div class="row mt-1">
-    <div class="col-md-4">
-      <img src="img/giftshimgucci_4.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">SHOES</p>
-      </div>
-      <div class="col-md-4">
-        <img src="img/giftshimgucci_5.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">PARFUME</p>
-        </div><div class="col-md-4">
-          <img src="img/giftshimgucci_6.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">WATCH</p>
-        </div>
-
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+	<center><a class="Homepage" href="index.html">Ethereal.</a></center>
+	<br>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Gifts for Him</h3></center>
+	<br>
+	<center>
+		<p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Elevate the holiday season to new heights,capturing the enchantment of magical
+			<br>moments with distinctive gifts that embody the sophistication of Louis Vuitton,the glamour
+			<br>of Gucci, and the timeless elegance of Dior's menswear.</p>
+	</center>
+	<br>
+	<br>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Dior</h3></center>
+	<div class="containerimg">
+		<main class="grid">
+			<article>
+				<a href="https://www.dior.com/en_id/fashion/products/31C1047B0771_C588-cannage-tie-navy-blue-and-white-silk"> <img src="img/diormen_1.avif"> </a>
+				<div class="isi"> <a>Cannage Tie</a> <a>$ 278</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.dior.com/en_id/fashion/products/2ADBH076YKS_H05E-saddle-wallet-black-grained-calfskin-leather-marquetry-with-beige-and-black-dior-oblique-jacquard"> <img src="img/diormen_2.avif"> </a>
+				<div class="isi"> <a>Saddle Wallet</a> <a>$ 738</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.dior.com/en_id/fashion/products/1ADME162YKS_H27E-saddle-messenger-bag-beige-and-black-dior-oblique-jacquard-and-black-grained-calfskin"> <img src="img/diormen_3.webp"> </a>
+				<div class="isi"> <a>Saddle Messenger Bag</a> <a>$ 3,403</a> </div>
+				<br> </article>
+		</main>
+	</div>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Louis Vuitton</h3></center>
+	<div class="containerimg">
+		<main class="grid">
+			<article>
+				<a href="https://id.louisvuitton.com/eng-id/products/backpack-lv-aerogram-nvprod2630056v/M57079"> <img src="img/lvmen_1.avif"> </a>
+				<div class="isi"> <a>Takeoff Backpack</a> <a>$ 3,403</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://id.louisvuitton.com/eng-id/products/multiple-wallet-taiga-nvprod1420109v/M30295"> <img src="img/lvmen_3.avif"> </a>
+				<div class="isi"> <a>Multiple wallet</a> <a>$ 655</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://id.louisvuitton.com/eng-id/products/damier-classic-tie-s00-008380/M78752"> <img src="img/lvmen_2.avif"> </a>
+				<div class="isi"> <a>Damier Classique Tie</a> <a>$ 241</a> </div>
+				<br> </article>
+		</main>
+	</div>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Gucci</h3></center>
+	<div class="containerimg">
+		<main class="grid">
+			<article>
+				<a href="https://www.gucci.com/us/en/pr/men/wallets-and-small-accessories-for-men/bi-fold-wallets-for-men/ophidia-gg-wallet-p-59760696IWT8745"> <img src="img/guccimen_1.avif"> </a>
+				<div class="isi"> <a>Ophidia GG Wallet</a> <a>$ 470</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.gucci.com/us/en/pr/men/accessories-for-men/belts-for-men/casual-belts-for-men/leather-belt-with-double-g-buckle-p-414516AP00T1000"> <img src="img/guccimen_2.avif"> </a>
+				<div class="isi"> <a>Leather Belt with Double G Buckle</a> <a>$ 490</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.gucci.com/us/en/pr/men/shoes-for-men/sneakers-for-men/low-top-sneakers-for-men/mens-gucci-ace-sneaker-with-web-p-757892AACAG9055"> <img src="img/guccimen_3.avif"> </a>
+				<div class="isi"> <a>Men's Gucci Ace Sneaker with Web</a> <a>$ 870</a> </div>
+				<br> </article>
+		</main>
+	</div>
 </body>
+
 </html>
