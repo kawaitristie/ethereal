@@ -77,7 +77,7 @@
         }
 
         #tombol:checked ~ .menubar{
-            right: 100% !important;
+            right: 0 !important;
             transition-duration: 0.25s;
         }
 
@@ -86,13 +86,13 @@
             display: block;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 100%;
             width: 250px;
             height: 100%;
             margin: 0;
             padding: 80px 0;
             list-style: none;
-            backdrop-filter: blur(15px);
+            background-color: white;
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
@@ -106,6 +106,18 @@
         .menubar .menu .item{
             position: relative;
             cursor: pointer;
+        }
+
+        .menubar .menu .text{
+            color: black;
+            background-color: whitesmoke;
+            font-size: larger;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+            text-align: center;
         }
 
         .menubar .menu .item a{
@@ -139,12 +151,71 @@
         .Homepage {
             font-family: 'Times New Roman', Times, serif;
             font-size: 100px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
 
         }
+/* Isi Konten */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-gap: 80px;
+            margin: 50px;
+        }
 
+        img {
+            object-fit: cover;
+            width: 400px;
+            height: 300px;
+        }
+
+        .grid article {
+            box-shadow: 0 0 5px 0 black;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform;
+        }
+
+        .grid article img {
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .isi {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid article:hover{
+            scale: 1.1;
+        }
+
+        .grid article a{
+            font-size: small;
+            font-family: sans-serif;
+            font-weight: 500px;
+            text-decoration: none;
+            color: black;
+            
+        }
+
+        @media (max-width:1000px){
+            .grid{
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                grid-gap: 50px;
+            }
+        }
+
+        @media (max-width:800px){
+            .grid{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
 
 
     </style>
@@ -155,6 +226,7 @@
         });
         });
     </script>
+
 </head>
 <body>
     <div class="hamburger-menu">
@@ -166,7 +238,8 @@
    <div class="menubar">
     <div class="menu">
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
+            <div class="text">Menu</div>
+            <a class="subtombol">  Wear</a>
             <div class="submenu">
                 <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
                 <a href="Sman.html" class="subitem"> Shirts</a>
@@ -179,7 +252,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
+            <a class="subtombol">  Accesories</a>
             <div class="submenu">
                 <a href="Bman.html" class="subitem"> Belt</a>
                 <a href="Eman.html" class="subitem"> Eyewear</a>
@@ -189,7 +262,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i></i> Shoes</a>
+            <a class="subtombol">  Shoes</a>
             <div class="submenu">
                 <a href="Snman.html" class="subitem"> Sneakers</a>
                 <a href="Boman.html" class="subitem"> Boots</a>
@@ -200,10 +273,102 @@
         </div>
    </div>
 
-    <center><a class="Homepage" href="index.html">Ethereal</a></center>
+    <center><a class="Homepage" href="index.html">Ethereal.</a></center>
     <br>
     <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">T-shirt & Polos</h3></center>
     <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">T-shirts are not just clothes, but a reflection of a relaxed but still classy lifestyle.</p></center>
-
-</body>
-</html>
+    <br>
+    <br>
+    <br>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Dior</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">T-shirts & Polos</p></center>
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/POLO SHIRT WITH BEE EMBROIDERY (Man).png" alt="Polo Shirts">
+                <div class="isi">
+                    <a href="poloembroidery.html">Polo Shirt With Bee Embroidery</a>
+                    <a href="poloembroidery.html">$ 1,224</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/CHRISTIAN DIOR COUTURE RELAXED-FIT T-SHIRT (Man).png" alt="Polo Shirts" >
+                <div class="isi">
+                    <a href="christiandiorcouturerelaxed-fitt-shirt.html">Chirstian Dior Couture Relaxed-Fit T-Shirt</a>
+                    <a href="christiandiorcouturerelaxed-fitt-shirt.html">$ 812</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/DIOR OBLIQUE RELAXED-FIT T-SHIRT (Man).png" alt="Polo Shirts">
+                <div class="isi">
+                    <a href="diorobliquerelaxed-fitt-shirt.html">Dior Oblique Relaxed-Fit T-Shirt</a>
+                    <a href="diorobliquerelaxed-fitt-shirt.html">$ 999</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Gucci</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">T-shirts & Polos</p></center>    
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/COTTON JERSEY T-SHIRT (Man).png" alt="Polo Shirts">
+                <div class="isi">
+                    <a href="cottonjerseyt-shirt.html">Cotton Jersey T-Shirt</a>
+                    <a href="cottonjerseyt-shirt.html">$ 650</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/WOOL CASHMERE POLO SHIRT (Man).png" alt="Polo Shirts">
+                <div class="isi">
+                    <a href="polowoolcashmere.html">Wool Cashmere Polo Shirt</a>
+                    <a href="polowoolcashmere.html">$ 2,100</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/COTTON JERSEY PRINTED T-SHIRT (Man).png" alt="Polo Shirts">
+                <div class="isi">
+                    <a href="cottonjerseyprintedt-shirt.html">Cotton Jersey Printed T-Shirt</a>
+                    <a href="cottonjerseyprintedt-shirt.html">$ 590</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Louis Vuitton</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">T-shirts & Polos</p></center>
+        <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/louis-vuitton-monogram-cotton-t-shirt (Man).jpg" alt="">
+                <div class="isi">
+                    <a href="monogramcottontshirt.html">Monogram Cotton T-Shirt</a>
+                    <a href="monogramcottontshirt.html">$ 1,076</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-embroidered-signature-cotton-polo (Man).png" alt="">
+                <div class="isi">
+                    <a href="embroideredsignaturecottonpolo.html">Embroidered Signature Cotton Polo</a>
+                    <a href="embroideredsignaturecottonpolo.html">$ 850</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-cotton-half-damier-pocket-t-shirt (Man).png" alt="">
+                <div class="isi">
+                    <a href="cottonhalfdamierpockett-shirt.html">Cotton Half Damier Pocket T-Shirt</a>
+                    <a href="cottonhalfdamierpockett-shirt.html">$ 773</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    </body>
+    </html>

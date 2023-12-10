@@ -77,7 +77,7 @@
         }
 
         #tombol:checked ~ .menubar{
-            right: 100% !important;
+            right: 0 !important;
             transition-duration: 0.25s;
         }
 
@@ -86,13 +86,13 @@
             display: block;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 100%;
             width: 250px;
             height: 100%;
             margin: 0;
             padding: 80px 0;
             list-style: none;
-            backdrop-filter: blur(15px);
+            background-color: white;
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
@@ -106,6 +106,18 @@
         .menubar .menu .item{
             position: relative;
             cursor: pointer;
+        }
+
+        .menubar .menu .text{
+            color: black;
+            background-color: whitesmoke;
+            font-size: larger;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+            text-align: center;
         }
 
         .menubar .menu .item a{
@@ -139,12 +151,57 @@
         .Homepage {
             font-family: 'Times New Roman', Times, serif;
             font-size: 100px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
 
         }
+/* Isi Konten */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-gap: 80px;
+            margin: 50px;
+        }
 
+        img {
+            object-fit: cover;
+            width: 400px;
+            height: 300px;
+        }
+
+        .grid article {
+            box-shadow: 0 0 5px 0 black;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform;
+        }
+
+        .grid article img {
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .isi {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid article:hover{
+            scale: 1.1;
+        }
+
+        .grid article a{
+            font-size: small;
+            font-family: sans-serif;
+            font-weight: 500px;
+            text-decoration: none;
+            color: black;
+            
+        }
 
 
     </style>
@@ -155,6 +212,7 @@
         });
         });
     </script>
+
 </head>
 <body>
     <div class="hamburger-menu">
@@ -166,7 +224,8 @@
    <div class="menubar">
     <div class="menu">
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
+            <div class="text">Menu</div>
+            <a class="subtombol">  Wear</a>
             <div class="submenu">
                 <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
                 <a href="Sman.html" class="subitem"> Shirts</a>
@@ -179,7 +238,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
+            <a class="subtombol">  Accesories</a>
             <div class="submenu">
                 <a href="Bman.html" class="subitem"> Belt</a>
                 <a href="Eman.html" class="subitem"> Eyewear</a>
@@ -189,7 +248,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i></i> Shoes</a>
+            <a class="subtombol">  Shoes</a>
             <div class="submenu">
                 <a href="Snman.html" class="subitem"> Sneakers</a>
                 <a href="Boman.html" class="subitem"> Boots</a>
@@ -200,10 +259,102 @@
         </div>
    </div>
 
-    <center><a class="Homepage" href="index.html">Ethereal</a></center>
+    <center><a class="Homepage" href="index.html">Ethereal.</a></center>
     <br>
     <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Sneakers</h3></center>
     <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">In every sneaker, we find an undeniable balance of comfort and style.</p></center>
-
-</body>
-</html>
+    <br>
+    <br>
+    <br>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Dior</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Sneakers</p></center>
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/B57 MID-TOP SNEAKER (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="b57midtopsneaker.html">B57 Mid-Top Sneaker</a>
+                    <a href="b57midtopsneaker.html">$ 1,541</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/B33 SNEAKER (Man).png" alt="Sneakers" >
+                <div class="isi">
+                    <a href="b33sneaker.html">B33 Sneaker</a>
+                    <a href="b33sneaker.html">$ 1,284</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/B23 HIGH-TOP SNEAKER (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="b23high-topsneaker.html">B23 High-Top Sneaker</a>
+                    <a href="b23high-topsneaker.html">$ 1,413</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Gucci</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Sneakers</p></center>    
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/Mens-MAC80-high-top-sneaker.png" alt="Sneakers">
+                <div class="isi">
+                    <a href="menma80hightopsneaker.html">Men's MAC80 High Top Sneaker</a>
+                    <a href="menma80hightopsneaker.html">$ 1,100</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Mens-Ace-GG-Crystal-canvas-sneaker (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="menaceggcrystalcanvassneaker.html">Men's Ace GG Crystal Canvas Sneaker</a>
+                    <a href="menaceggcrystalcanvassneaker.html">$ 820</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Mens-Ace-GG-Crystal-canvas-sneaker 2 (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="menaceggcrystalcanvas.html">Men's Ace GG Crystal Canvas Sneaker</a>
+                    <a href="menaceggcrystalcanvas.html">$ 820</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Louis Vuitton</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Sneakers</p></center>
+        <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/louis-vuitton-lv-trainer-sneaker-shoes (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="lvtrainersneaker.html">LV Trainer Sneaker</a>
+                    <a href="lvtrainersneaker.html">$ 1,368</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-run-away-sneaker-shoes (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="runawaysneaker.html">Run Away Sneaker</a>
+                    <a href="runawaysneaker.html">$ 1,162</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-rivoli-sneaker-shoes (Man).png" alt="Sneakers">
+                <div class="isi">
+                    <a href="rivolisneaker.html">Rivoli Sneaker</a>
+                    <a href="rivolisneaker.html">$ 1,066</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    </body>
+    </html>

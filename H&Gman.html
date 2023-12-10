@@ -77,7 +77,7 @@
         }
 
         #tombol:checked ~ .menubar{
-            right: 100% !important;
+            right: 0 !important;
             transition-duration: 0.25s;
         }
 
@@ -86,13 +86,13 @@
             display: block;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 100%;
             width: 250px;
             height: 100%;
             margin: 0;
             padding: 80px 0;
             list-style: none;
-            backdrop-filter: blur(15px);
+            background-color: white;
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
@@ -106,6 +106,18 @@
         .menubar .menu .item{
             position: relative;
             cursor: pointer;
+        }
+
+        .menubar .menu .text{
+            color: black;
+            background-color: whitesmoke;
+            font-size: larger;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+            text-align: center;
         }
 
         .menubar .menu .item a{
@@ -139,12 +151,57 @@
         .Homepage {
             font-family: 'Times New Roman', Times, serif;
             font-size: 100px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
 
         }
+/* Isi Konten */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-gap: 80px;
+            margin: 50px;
+        }
 
+        img {
+            object-fit: cover;
+            width: 400px;
+            height: 300px;
+        }
+
+        .grid article {
+            box-shadow: 0 0 5px 0 black;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform;
+        }
+
+        .grid article img {
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .isi {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid article:hover{
+            scale: 1.1;
+        }
+
+        .grid article a{
+            font-size: small;
+            font-family: sans-serif;
+            font-weight: 500px;
+            text-decoration: none;
+            color: black;
+            
+        }
 
 
     </style>
@@ -155,6 +212,7 @@
         });
         });
     </script>
+
 </head>
 <body>
     <div class="hamburger-menu">
@@ -166,7 +224,8 @@
    <div class="menubar">
     <div class="menu">
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
+            <div class="text">Menu</div>
+            <a class="subtombol">  Wear</a>
             <div class="submenu">
                 <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
                 <a href="Sman.html" class="subitem"> Shirts</a>
@@ -179,7 +238,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
+            <a class="subtombol">  Accesories</a>
             <div class="submenu">
                 <a href="Bman.html" class="subitem"> Belt</a>
                 <a href="Eman.html" class="subitem"> Eyewear</a>
@@ -189,7 +248,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i></i> Shoes</a>
+            <a class="subtombol">  Shoes</a>
             <div class="submenu">
                 <a href="Snman.html" class="subitem"> Sneakers</a>
                 <a href="Boman.html" class="subitem"> Boots</a>
@@ -200,10 +259,102 @@
         </div>
    </div>
 
-    <center><a class="Homepage" href="index.html">Ethereal</a></center>
+    <center><a class="Homepage" href="index.html">Ethereal.</a></center>
     <br>
     <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Hats & Gloves</h3></center>
     <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">In the hat and gloves, there is a touch of elegance that frames a man's character.</p></center>
-
-</body>
-</html>
+    <br>
+    <br>
+    <br>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Dior</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Hats & Gloves</p></center>
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/REVERSIBLE DIOR OBLIQUE BUCKET HAT (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="reversiblediorobliquebuckethat.html">Reversible Dior Oblique Bucket Hat</a>
+                    <a href="reversiblediorobliquebuckethat.html">$ 995</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/CD DIAMOND GLOVES (Man).png" alt="Hats & Gloves" >
+                <div class="isi">
+                    <a href="cddiamondgloves.html">CD Diamond Gloves</a>
+                    <a href="cddiamondgloves.html">$ 1,027</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/CD DIAMOND BASEBALL CAP (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="cddiamondbaseballcap.html">CD Diamond Baseball Cap</a>
+                    <a href="cddiamondbaseballcap.html">$ 867</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Gucci</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Ties</p></center>    
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/GG-polyester-baseball-hat (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="ggpolyesterbaseballhat.html">GG Polyester Baseball Hat</a>
+                    <a href="ggpolyesterbaseballhat.html">$ 460</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/GG-polyester-bucket-hat (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="ggpolyesterbuckethat.html">GG Polyester Bucket Hat</a>
+                    <a href="ggpolyesterbuckethat.html">$ 590</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Felted-wool-baseball-hat-with-patch (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="feltedwoolbaseballhatwithpatch.html">Felted Wool Baseball Hat With Patch</a>
+                    <a href="feltedwoolbaseballhatwithpatch.html">$ 490</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Louis Vuitton</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Hats & Gloves</p></center>
+        <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/louis-vuitton-rainbow-cap-s00 (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="rainboycap.html">Rainbow Cap</a>
+                    <a href="rainboycap.html">$ 880</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-denim-mng-bleached-cap-s00 (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="denimmngbleachcap.html">Denim MNG Bleached Cap</a>
+                    <a href="denimmngbleachcap.html">$ 828</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-néo-petit-damier-gloves-s00 (Man).png" alt="Hats & Gloves">
+                <div class="isi">
+                    <a href="neopetitdamiergloves.html">Néo Petit Damier Gloves</a>
+                    <a href="neopetitdamiergloves.html">$ 344</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    </body>
+    </html>

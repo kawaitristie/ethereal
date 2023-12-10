@@ -77,7 +77,7 @@
         }
 
         #tombol:checked ~ .menubar{
-            right: 100% !important;
+            right: 0 !important;
             transition-duration: 0.25s;
         }
 
@@ -86,13 +86,13 @@
             display: block;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 100%;
             width: 250px;
             height: 100%;
             margin: 0;
             padding: 80px 0;
             list-style: none;
-            backdrop-filter: blur(15px);
+            background-color: white;
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
@@ -106,6 +106,18 @@
         .menubar .menu .item{
             position: relative;
             cursor: pointer;
+        }
+
+        .menubar .menu .text{
+            color: black;
+            background-color: whitesmoke;
+            font-size: larger;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+            text-align: center;
         }
 
         .menubar .menu .item a{
@@ -139,12 +151,57 @@
         .Homepage {
             font-family: 'Times New Roman', Times, serif;
             font-size: 100px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
 
         }
+/* Isi Konten */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-gap: 80px;
+            margin: 50px;
+        }
 
+        img {
+            object-fit: cover;
+            width: 400px;
+            height: 300px;
+        }
+
+        .grid article {
+            box-shadow: 0 0 5px 0 black;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform;
+        }
+
+        .grid article img {
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .isi {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid article:hover{
+            scale: 1.1;
+        }
+
+        .grid article a{
+            font-size: small;
+            font-family: sans-serif;
+            font-weight: 500px;
+            text-decoration: none;
+            color: black;
+            
+        }
 
 
     </style>
@@ -155,6 +212,7 @@
         });
         });
     </script>
+
 </head>
 <body>
     <div class="hamburger-menu">
@@ -166,7 +224,8 @@
    <div class="menubar">
     <div class="menu">
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
+            <div class="text">Menu</div>
+            <a class="subtombol">  Wear</a>
             <div class="submenu">
                 <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
                 <a href="Sman.html" class="subitem"> Shirts</a>
@@ -179,7 +238,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
+            <a class="subtombol">  Accesories</a>
             <div class="submenu">
                 <a href="Bman.html" class="subitem"> Belt</a>
                 <a href="Eman.html" class="subitem"> Eyewear</a>
@@ -189,7 +248,7 @@
             </div>
         </div>
         <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i></i> Shoes</a>
+            <a class="subtombol">  Shoes</a>
             <div class="submenu">
                 <a href="Snman.html" class="subitem"> Sneakers</a>
                 <a href="Boman.html" class="subitem"> Boots</a>
@@ -200,10 +259,102 @@
         </div>
    </div>
 
-    <center><a class="Homepage" href="index.html">Ethereal</a></center>
+    <center><a class="Homepage" href="index.html">Ethereal.</a></center>
     <br>
     <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Ties</h3></center>
     <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">When a man ties a tie, he is not only styling the fabric, but also establishing character.</p></center>
-
-</body>
-</html>
+    <br>
+    <br>
+    <br>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Dior</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Ties</p></center>
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/CHRISTIAN DIOR COUTURE TIE (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="christiandiorcounturetie.html">Christian Dior Couture Tie</a>
+                    <a href="christiandiorcounturetie.html">$ 278</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/CANNAGE BOW TIE (Man).png" alt="Ties" >
+                <div class="isi">
+                    <a href="cannagebowtie.html">Cannage Bow Tie</a>
+                    <a href="cannagebowtie.html">$ 263</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/TIE WITH BEE MOTIF (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="tiewithbeemotif.html">Tie With Bee Motif</a>
+                    <a href="tiewithbeemotif.html">$ 278</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Gucci</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Ties</p></center>    
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/Interlocking-G-silk-wool-jacquard-tie (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="interlockinggsilkwooljacquardtie.html">Interlocking G Silk Wool Jacquard Tie</a>
+                    <a href="interlockinggsilkwooljacquardtie.html">$ 220</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Interlocking-G-silk-wool-jacquard-tie2 (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="interlockinggsilkwooljacquardtiee.html">Interlocking G Silk Wool Jacquard Tie</a>
+                    <a href="interlockinggsilkwooljacquardtiee.html">$ 220</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Stirrup-Interlocking-G-print-silk-tie (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="stirrupinterlockinggprintsilktie.html">Stirrup Interlocking G Print Silk Tie</a>
+                    <a href="stirrupinterlockinggprintsilktie.html">$ 220</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Louis Vuitton</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Ties</p></center>
+        <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/louis-vuitton-neo-monogramissime-capsule-tie-s00 (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="neomonogramissimecapsuletie.html">Neo Monogramissime Capsule Tie</a>
+                    <a href="neomonogramissimecapsuletie.html">$ 241</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-damier-classique-tie-s00 (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="damierclassique.html">Damier Classique Tie</a>
+                    <a href="damierclassique.html">$ 241</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-mng-grid-tie-s00 (Man).png" alt="Ties">
+                <div class="isi">
+                    <a href="mnggridtie.html">MNG Grid Tie</a>
+                    <a href="mnggridtie.html">$ 241</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    </body>
+    </html>

@@ -77,7 +77,7 @@
         }
 
         #tombol:checked ~ .menubar{
-            right: 100% !important;
+            right: 0 !important;
             transition-duration: 0.25s;
         }
 
@@ -86,13 +86,13 @@
             display: block;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 100%;
             width: 250px;
             height: 100%;
             margin: 0;
             padding: 80px 0;
             list-style: none;
-            backdrop-filter: blur(15px);
+            background-color: white;
             box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
             transition-duration: 0.25s;
             overflow: scroll;
@@ -101,6 +101,18 @@
         .menubar .menu{
             width: 100%;
             margin-top: 20px;
+        }
+
+        .menubar .menu .text{
+            color: black;
+            background-color: whitesmoke;
+            font-size: larger;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            padding: 15px 20px;
+            line-height: 20px;
+            text-align: center;
         }
 
         .menubar .menu .item{
@@ -139,13 +151,71 @@
         .Homepage {
             font-family: 'Times New Roman', Times, serif;
             font-size: 100px;
+            font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             color: black;
 
         }
+/* Isi Konten */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-gap: 80px;
+            margin: 50px;
+        }
 
+        img {
+            object-fit: cover;
+            width: 400px;
+            height: 300px;
+        }
 
+        .grid article {
+            box-shadow: 0 0 5px 0 black;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform;
+        }
+
+        .grid article img {
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .isi {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid article:hover{
+            scale: 1.1;
+        }
+
+        .grid article a{
+            font-size: small;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500px;
+            text-decoration: none;
+            color: black;
+            
+        }
+
+        @media (max-width:1000px){
+            .grid{
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                grid-gap: 50px;
+            }
+        }
+
+        @media (max-width:800px){
+            .grid{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
 
     </style>
     <script>
@@ -155,6 +225,7 @@
         });
         });
     </script>
+
 </head>
 <body>
     <div class="hamburger-menu">
@@ -163,47 +234,140 @@
     <span></span>
     </label>
 
-   <div class="menubar">
-    <div class="menu">
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shirt"></i></i> Wear</a>
-            <div class="submenu">
-                <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
-                <a href="Sman.html" class="subitem"> Shirts</a>
-                <a href="K&Sman.html" class="subitem"> Knitwear & Sweatshirts</a>
-                <a href="Oman.html" class="subitem"> Outerwear</a>
-                <a href="Cman.html" class="subitem"> Coats</a>
-                <a href="P&Sman.html" class="subitem"> Pants & Shorts</a>
-                <a href="F&Tman.html" class="subitem"> Formal Wear & Tailoring</a>
-                <a href="Dman.html" class="subitem"> Denim</a>
+    <div class="menubar">
+        <div class="menu">
+            <div class="item">
+                <div class="text">Menu</div>
+                <a class="subtombol">  Wear</a>
+                <div class="submenu">
+                    <a href="T&Pman.html" class="subitem"> T-shirt & Polos</a>
+                    <a href="Sman.html" class="subitem"> Shirts</a>
+                    <a href="K&Sman.html" class="subitem"> Knitwear & Sweatshirts</a>
+                    <a href="Oman.html" class="subitem"> Outerwear</a>
+                    <a href="Cman.html" class="subitem"> Coats</a>
+                    <a href="P&Sman.html" class="subitem"> Pants & Shorts</a>
+                    <a href="F&Tman.html" class="subitem"> Formal Wear & Tailoring</a>
+                    <a href="Dman.html" class="subitem"> Denim</a>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-ring"></i> Accesories</a>
-            <div class="submenu">
-                <a href="Bman.html" class="subitem"> Belt</a>
-                <a href="Eman.html" class="subitem"> Eyewear</a>
-                <a href="Tman.html" class="subitem"> Ties</a>
-                <a href="H&Gman.html" class="subitem"> Hats & Gloves</a>
-                <a href="Soman.html" class="subitem"> Socks</a>
+            <div class="item">
+                <a class="subtombol">  Accesories</a>
+                <div class="submenu">
+                    <a href="Bman.html" class="subitem"> Belt</a>
+                    <a href="Eman.html" class="subitem"> Eyewear</a>
+                    <a href="Tman.html" class="subitem"> Ties</a>
+                    <a href="H&Gman.html" class="subitem"> Hats & Gloves</a>
+                    <a href="Soman.html" class="subitem"> Socks</a>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <a class="subtombol"><i class="fa-solid fa-shoe-prints"></i></i> Shoes</a>
-            <div class="submenu">
-                <a href="Snman.html" class="subitem"> Sneakers</a>
-                <a href="Boman.html" class="subitem"> Boots</a>
-                <a href="L&Lman.html" class="subitem"> Loafers & Lace-Up Shoes</a>
-                <a href="S&Sman.html" class="subitem"> Sandals & Slippers</a>
+            <div class="item">
+                <a class="subtombol">  Shoes</a>
+                <div class="submenu">
+                    <a href="Snman.html" class="subitem"> Sneakers</a>
+                    <a href="Boman.html" class="subitem"> Boots</a>
+                    <a href="L&Lman.html" class="subitem"> Loafers & Lace-Up Shoes</a>
+                    <a href="S&Sman.html" class="subitem"> Sandals & Slippers</a>
+                </div>
             </div>
-        </div>
-        </div>
-   </div>
-
-    <center><a class="Homepage" href="index.html">Ethereal</a></center>
-    <br>
+            </div>
+       </div>
+    
+        <center><a class="Homepage" href="index.html">Ethereal.</a></center>
+        <br>
     <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Outerwear</h3></center>
     <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Outerwear is the best protection that engages the body and soul, creating untold protection.</p></center>
-
-</body>
-</html>
+    <br>
+    <br>
+    <br>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Dior</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Outerwear</p></center>
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/Bomber Jacket (Man) [MConverter.eu].png" alt="Outerwear">
+                <div class="isi">
+                    <a href="bomberjacket.html">Bomber Jacket</a>
+                    <a href="bomberjacket.html">$ 3,870</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Cannage Overshirt (Man) [MConverter.eu].png" alt="Outerwear" >
+                <div class="isi">
+                    <a href="cannagejacketovershirt.html">Cannage Overshirt</a>
+                    <a href="cannagejacketovershirt.html">$ 3,290</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Cannage Jacket (Man) [MConverter.eu].png" alt="Outerwear">
+                <div class="isi">
+                    <a href="cannagejacket.html">Cannage Jacket</a>
+                    <a href="cannagejacket.html">$ 5,160</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Gucci</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Outerwear</p></center>    
+    <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/Light-GG-cotton-canvas-zip-jacket (Man) [MConverter.eu].png" alt="Outerwear">
+                <div class="isi">
+                    <a href="ggcottoncanvaszipjacket.html">Gg Cotton Canvas Zip Jacket</a>
+                    <a href="ggcottoncanvaszipjacket.html">$ 2,700</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Light-GG-ripstop-fabric-zip-jacket (Man).png" alt="Outerwear">
+                <div class="isi">
+                    <a href="ggristopfabriczipjactket.html">Gg Ripstop Fabric Zip Jacket</a>
+                    <a href="ggristopfabriczipjactket.html">$ 3,700</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/Light-Nylon-canvas-reversible-zip-jacket (Man).png" alt="Outerwear">
+                <div class="isi">
+                    <a href="nyloncanvasreversiblezipjacket.html">Nylon Canvas Reversible Zip Jacket</a>
+                    <a href="nyloncanvasreversiblezipjacket.html">$ 3,200</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    <center><h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">Louis Vuitton</h3></center>
+    <center><p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Outerwear</p></center>
+        <div class="containerimg">
+        <main class="grid">
+            <article>
+                <img src="img/louis-vuitton-monogram-reversible-down-gilet (Man).png" alt="Outerwear">
+                <div class="isi">
+                    <a href="monogramreversibledowngilet.html">Monogram Reversible Down Gilet</a>
+                    <a href="monogramreversibledowngilet.html">$ 2,902</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-reversible-fleece-gilet (Man).png" alt="Outerwear">
+                <div class="isi">
+                    <a href="reversiblefleecegilet.html">Reversible Fleece Gilet</a>
+                    <a href="reversiblefleecegilet.html">$ 1,774</a>
+                </div>
+                <br>
+            </article>
+            <article>
+                <img src="img/louis-vuitton-cotton-hooded-blouson (Man).png" alt="Outerwear">
+                <div class="isi">
+                    <a href="cottonhoodedblouson.html">Cotton Hooded Blouson</a>
+                    <a href="cottonhoodedblouson.html">$ 3,676</a>
+                </div>
+                <br>
+            </article>
+        </main>
+    </div>
+    </body>
+    </html>
