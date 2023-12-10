@@ -1,148 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>Gifts for Her</title>
-  <style>
-    body {
-      background-color: black;
-    }
 
-    p {
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gifts for Her</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+	<style>
+	p {
+		font-family: 'DejaVu Serif', serif;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/* Menu */
+	
+	.menubar {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 100%;
+		width: 250px;
+		height: 100%;
+		margin: 0;
+		padding: 80px 0;
+		list-style: none;
+		background-color: white;
+		box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.4);
+		transition-duration: 0.25s;
+		overflow: scroll;
+	}
+	
+	.menubar .menu {
+		width: 100%;
+		margin-top: 20px;
+	}
+	
+	.menubar .menu .text {
+		color: black;
+		background-color: whitesmoke;
+		font-size: larger;
+		font-weight: 500;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+		text-align: center;
+	}
+	
+	.menubar .menu .item {
+		position: relative;
+		cursor: pointer;
+	}
+	
+	.menubar .menu .item a {
+		color: black;
+		font-size: large;
+		text-decoration: none;
+		display: block;
+		padding: 15px 20px;
+		line-height: 20px;
+	}
+	
+	.menubar .menu .item a:hover {
+		background-color: black;
 		color: white;
 	}
-    .center-text {
-      text-align: center;
-    }
-
-    .larger-text {
-      font-size: 2em; /* Adjust the size as needed */
-    }
-  </style>
+	
+	.menubar .menu .item i {
+		margin-right: 8px;
+	}
+	
+	.menubar .menu .item .submenu {
+		background: rgb(238, 238, 238);
+		display: none;
+	}
+	
+	.menubar .menu .submenu a {
+		padding: 20px;
+		font-size: small;
+	}
+	
+	.Homepage {
+		font-family: 'Times New Roman', Times, serif;
+		font-size: 100px;
+		cursor: pointer;
+		text-decoration: none;
+		color: black;
+		font-weight: bold;
+	}
+	/*Isi Konten*/
+	
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		grid-gap: 80px;
+		margin: 50px;
+	}
+	
+	img {
+		object-fit: cover;
+		width: 400px;
+		height: 300px;
+	}
+	
+	.grid article {
+		box-shadow: 0 0 5px 0 black;
+		border-radius: 5px;
+		text-align: center;
+		transition: transform;
+	}
+	
+	.grid article img {
+		border-top-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	
+	.isi {
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.grid article:hover {
+		transform: scale(1.1);
+	}
+	
+	.grid article a {
+		font-size: small;
+		font-family: 'Times New Roman', Times, serif;
+		font-weight: 500px;
+		text-decoration: none;
+		color: black;
+	}
+	
+	@media (max-width: 768px) {
+		.grid {
+			grid-template-columns: 1fr;
+			grid-gap: 20px;
+			margin: 20px;
+		}
+		.containerimg {
+			width: 100%;
+		}
+	}
+	</style>
+	<script>
+	$(document).ready(function() {
+		$('.subtombol').click(function() {
+			$(this).next('.submenu').slideToggle();
+		});
+	});
+	</script>
 </head>
+
 <body>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mt-3 mb-0">
-            <p class="center-text font-weight-bold larger-text">DIOR</p>
-          </div>
-        </div>
-      </div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-md-4">
-      <img src="img/giftsherdior_1.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">BAGS</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftsherdior_2.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">SMALL LEATHER GOODS</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftsherdior_3.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">LITTLE LUXURIES</p>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-md-4">
-      <img src="img/giftsherdior_4.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">SHOES</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftsherdior_5.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">FASHION JEWELRY</p>
-    </div>
-    <div class="col-md-4">
-      <img src="img/giftsherdior_6.avif" class="img-fluid">
-      <p class="center-text font-weight-bold">ACCESSORIES</p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-12 text-center mt-3 mb-0">
-        <p class="center-text font-weight-bold larger-text">LV</p>
-      </div>
-    </div>
-  </div>
-<div class="container mt-3">
-<div class="row">
-<div class="col-md-4">
-  <img src="img/giftsherlv_1.webp" class="img-fluid">
-  <p class="center-text font-weight-bold">BAGS</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftsherlv_2.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">SMALL LEATHER GOODS</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftsherlv_3.jpeg" class="img-fluid">
-  <p class="center-text font-weight-bold">PARFUME</p>
-</div>
-</div>
-
-<div class="row mt-3">
-<div class="col-md-4">
-  <img src="img/giftsherlv_4.png" class="img-fluid">
-  <p class="center-text font-weight-bold">ACCESSORIES & LIFESTYLE</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftsherlv_5.avif" class="img-fluid">
-  <p class="center-text font-weight-bold">BACKPACK</p>
-</div>
-<div class="col-md-4">
-  <img src="img/giftsherlv_6.png" class="img-fluid">
-  <p class="center-text font-weight-bold">SHOES</p>
-</div>
-</div>
-</div>
-
-<div class="container">
-    <div class="row">
-      <div class="col-12 text-center mt-3 mb-0">
-        <p class="center-text font-weight-bold larger-text">GUCCI</p>
-      </div>
-    </div>
-  </div>
-
-<div class="container mt-3">
-<div class="row">
-    <div class="col-md-4">
-        <img src="img/giftshergucci_4.avif" class="img-fluid">
-        <p class="center-text font-weight-bold">NECKLACE</p>
-      </div>
-      <div class="col-md-4">
-          <img src="img/giftshergucci_5.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">BELT</p>
-        </div>
-      
-        <div class="col-md-4">
-          <img src="img/giftshergucci_6.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">PARFUME</p>
-        </div>
-
-<div class="row mt-1">
-    <div class="col-md-4">
-        <img src="img/giftshergucci_1.avif" class="img-fluid">
-        <p class="center-text font-weight-bold">BAGS</p>
-      </div>
-      <div class="col-md-4">
-          <img src="img/giftshergucci_2.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">SHOES</p>
-        </div><div class="col-md-4">
-          <img src="img/giftshergucci_3.avif" class="img-fluid">
-          <p class="center-text font-weight-bold">SMALL LEATHER</p>
-        </div>
-
-</div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+	<center><a class="Homepage" href="index.html">Ethereal.</a></center>
+	<br>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Gifts for Her</h3></center>
+	<br>
+	<center>
+		<p style="font-size: small; font-family: 'Times New Roman', Times, serif;">Explore exquisite gifts, carefully selected from the timeless elegance of Dior,
+			<br>the avant-garde luxury of Louis Vuitton (LV), and the sophisticated allure of Gucci's
+			<br>collections for women. Unveil promises of delightful moments that will add an enchanting
+			<br>sparkle to your year-end celebrations.</p>
+	</center>
+	<br>
+	<br>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Dior</h3></center>
+	<div class="containerimg">
+		<main class="grid">
+			<article>
+				<a href="https://www.dior.com/en_id/fashion/products/M1296ZESV_M01E-medium-dior-book-tote-gold-tone-and-white-butterfly-around-the-world-embroidery-36-x-27.5-x-16.5-cm"> <img src="img/diorwomen_1.avif"> </a>
+				<div class="isi"> <a>Medium Dior Book Tote</a> <a>$ 3,981</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.dior.com/en_id/fashion/products/KCK260AOX_S09W-d-connect-sneaker-technical-fabric-with-gold-tone-allover-butterfly-print"><img src="img/diorwomen_2.avif"> </a>
+				<div class="isi"> <a>D-Connect Sneaker</a> <a>$ 1,220</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.dior.com/en_id/fashion/products/S0965ONMJ_M116-lady-dior-cosmos-zipped-card-holder-sand-colored-cannage-lambskin"> <img src="img/diorwomen_3.avif"> </a>
+				<div class="isi"> <a>LD Cosmos Zipped Card Holder</a> <a>$ 616</a> </div>
+				<br> </article>
+		</main>
+	</div>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Louis Vuitton</h3></center>
+	<div class="containerimg">
+		<main class="grid">
+			<article>
+				<a href="https://id.louisvuitton.com/eng-id/products/pochette-metis-monogram-empreinte-nvprod630173v/M46552"><img src="img/lvwomen_1.avif"> </a>
+				<div class="isi"> <a>Pochette Métis</a> <a>$ 2,922</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://id.louisvuitton.com/eng-id/products/color-blossom-bb-star-pendant-pink-gold-pink-mother-of-pearl-and-diamond-nvprod280001v/Q93612"> <img src="img/lvwomen_2.avif"> </a>
+				<div class="isi"> <a>Color Blossom BB Star Pendant</a> <a>$ 3,179</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://id.louisvuitton.com/eng-id/products/lv-moon-square-sunglasses-s00-nvprod3560030v/Z1652W"> <img src="img/lvwomen_3.avif"> </a>
+				<div class="isi"> <a>LV Moon Square Sunglasses</a> <a>$ 687</a> </div>
+				<br> </article>
+		</main>
+	</div>
+	<center>
+		<h3 style="font-size: 20px; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Gucci</h3></center>
+	<div class="containerimg">
+		<main class="grid">
+			<article>
+				<a href="https://www.gucci.com/us/en/pr/women/accessories-for-women/silks-and-scarves-for-women/scarves-for-women/gg-wool-jacquard-scarf-p-7744193GAMQ9778"> <img src="img/gucciwomen_1.png"> </a>
+				<div class="isi"> <a>GG Wool Jacquard Scarf</a> <a>$ 550</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.gucci.com/us/en/pr/women/accessories-for-women/belts-for-women/gg-marmont-reversible-belt-p-65941692TIC9769"> <img src="img/gucciwomen_2.png"> </a>
+				<div class="isi"> <a>GG Marmont Reversible Belt</a> <a>$ 570</a> </div>
+				<br> </article>
+			<article>
+				<a href="https://www.gucci.com/us/en/pr/beauty/fragrances/fragrances-for-women/gucci-guilty/gucci-guilty-pour-femme-90ml-eau-de-parfum-p-563241999990099"> <img src="img/gucciwomen_3.png"> </a>
+				<div class="isi"> <a>Gucci Guilty Pour Femme EDP 90ml</a> <a>$ 168</a> </div>
+				<br> </article>
+		</main>
+	</div>
 </body>
+
 </html>
